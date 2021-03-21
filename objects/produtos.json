@@ -1,0 +1,10 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "descricao": "Xbox series S",
+            "img": "",
+            "valor": 1299.99
+        }
+    ]
+}
