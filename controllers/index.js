@@ -1,6 +1,6 @@
 let header = document.getElementsByTagName('header')[0],
     contentHeader =
-        `<img src="../assets/JMGames_White.png" alt="JM Games" class="item-header">
+    `<img src="../assets/JMGames_White.png" alt="JM Games" class="item-header">
 
         <input type="text" name="search" id="search" placeholder="Pesquisar">
 
