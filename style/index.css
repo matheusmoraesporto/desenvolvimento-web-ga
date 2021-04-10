@@ -2,13 +2,15 @@
     font-family: 'Montserrat';
     padding: 0;
     margin: 0;
+    font-size: 16px;
 }
 
 .cursor-pointer {
     cursor: pointer;
 }
 
-input:focus, button:focus {
+input:focus,
+button:focus {
     box-shadow: 0;
     outline: 0;
     border-left: 0;

@@ -14,3 +14,21 @@ let header = document.getElementsByTagName('header')[0],
         </button>`;
 
 Utils.pushComponent(header, contentHeader);
+
+let footer = document.getElementsByTagName('footer')[0],
+    contentFooter =
+    `<p>Desenvolvido por: <span>Jennifer Diehl e Matheus Moraes</span></p> 
+    <p><p/>
+    <p><p/>
+    <p>© 2021 JM Games</p>
+    `;
+Utils.pushComponent(footer, contentFooter);
+
+
+let main = document.getElementsByClassName('main')[0];
+let content = '';
+let itens = ['controle', 'console'];
+itens.forEach(i => {
+    content += `<p>${i}</p>`
+});
+Utils.pushComponent(main, content);

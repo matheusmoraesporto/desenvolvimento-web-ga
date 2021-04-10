@@ -6,7 +6,8 @@ header {
     height: 50px;
 }
 
-header input, header input::after {
+header input,
+header input::after {
     border-radius: 20px;
     border: none;
     width: 30%;
@@ -17,11 +18,12 @@ header input, header input::after {
     height: 40px;
 }
 
-.item-header, .search button img {
+.item-header,
+.search button img {
     height: 30px;
 }
 
-.flex-row { 
+.flex-row {
     align-items: center;
     display: flex;
     flex-direction: row;
