@@ -9,17 +9,25 @@ header {
 header input,
 header input::after {
     border-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
     border: none;
-    width: 30%;
     padding: 10px 20px;
+}
+
+.div-search {
+    width: 30%;
+}
+
+#search {
+    width: 100%;
 }
 
 .logo {
     height: 40px;
 }
 
-.item-header,
-.search button img {
+.item-header {
     height: 30px;
 }
 
@@ -27,6 +35,16 @@ header input::after {
     align-items: center;
     display: flex;
     flex-direction: row;
+}
+
+.find {
+    height: 40.27px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #ffffff;
+    /* border-block-color: inherit; */
+    border-style: hidden;
+    padding-right: 5px;
 }
 
 .user img {

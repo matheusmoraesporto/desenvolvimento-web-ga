@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/footer.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <title>JM Games</title>
+</head>
+
+<body>
+    <header class="flex-row">
+        <img src="../assets/logotypes/JMGames_White.png" alt="JM Games" class="logo">
+
+        <div class="flex-row div-search">
+            <input type="text" name="search" id="search" placeholder="Pesquisar">
+            <button type="submit" class="find cursor-pointer">
+                <img src="../assets/icons/search.png" alt="Pesquisar" class="item-header">
+            </button>
+        </div>
+
+        <div class="user flex-row">
+            <img src="../assets/icons/user.png" alt="Usuário" class="item-header">
+            <p>Olá, usuário!!</p>
+        </div>
+
+        <img src="../assets/icons/cart.png" alt="Carrinho" class="item-header cursor-pointer">
+    </header>
+
+    <div class="main"></div>
+
+    <footer>
+        <p>Desenvolvido por: <span>Jennifer Diehl e Matheus Moraes</span></p> 
+        <p></p>
+        <p></p>
+        <p>© 2021 JM Games</p>
+    </footer>
+    
+    <script src="./controllers/utils.js"></script>
+    <script src="./controllers/index.js"></script>
+</body>
+
+</html>
