@@ -31,12 +31,6 @@ header input::after {
     height: 30px;
 }
 
-.flex-row {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-
 .find {
     height: 40.27px;
     border-bottom-right-radius: 20px;

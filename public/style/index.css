@@ -17,3 +17,19 @@ button:focus {
     border-right: 0;
     border-top: 0;
 }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
