@@ -21,14 +21,19 @@ renderProducts = (products) => {
     products.forEach((product) => {
         content += `
         <div class="card-products">
-            <img src="${product.img}" alt="Carrinho" class="cursor-pointer products-images">
+            <img src="${product.img}" alt="Carrinho" class="products-images">
 
             <div class="description">
             <p id="product-${product.id}" class="products-description">${product.description}</p>
             </div>
+
+            <p id="value-${product.value}" class="products-value">R$ ${product.value}<p/>
             
-            <button id="btn-add-product-${product.id}" class="add-product">Adicionar ao carrinho</button>
-        </div>
+            <div class="cart-button">
+            <button id="btn-add-product-${product.id}" class="cursor-pointer add-product">Adicionar ao carrinho</button>
+            </div>
+            
+            </div>
         `;
     });
 
@@ -52,8 +57,7 @@ renderProducts = (products) => {
                         o.quantidade++;
                     }
                 });
-            }
-            else {
+            } else {
                 cart.push(new ProductCart(newProduct, 1));
             }
 
@@ -65,8 +69,7 @@ renderProducts = (products) => {
                 spnCart.hidden = false;
 
                 spnCart.textContent = productsInCart;
-            }
-            else {
+            } else {
                 spnCart.hidden = true;
             }
         });

@@ -59,8 +59,11 @@ header input::after {
 }
 
 #cart-length {
-    background-color: yellow;
-    width: 20px;
-    height: 20px;
+    background-color: #00B4D8;
+    width: 18px;
+    height: 18px;
+    top: 0%;
+    margin: 23px;
+    position: absolute;
     border-radius: 10px;
 }
