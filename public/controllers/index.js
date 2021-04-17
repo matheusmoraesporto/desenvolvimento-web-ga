@@ -20,9 +20,13 @@ fetch(loadProducts)
 renderProducts = (products) => {
     products.forEach((product) => {
         content += `
-        <div>
-            <img src="${product.img}" alt="Carrinho" class="cursor-pointer">
-            <p id="product-${product.id}">${product.description}</p>
+        <div class="card-products">
+            <img src="${product.img}" alt="Carrinho" class="cursor-pointer products-images">
+
+            <div class="description">
+            <p id="product-${product.id}" class="products-description">${product.description}</p>
+            </div>
+            
             <button id="btn-add-product-${product.id}" class="add-product">Adicionar ao carrinho</button>
         </div>
         `;
