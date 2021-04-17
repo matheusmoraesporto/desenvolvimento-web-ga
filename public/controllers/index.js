@@ -1,48 +1,23 @@
 let productsComponent = document.getElementsByClassName('products')[0],
     products = [],
     cart = [],
-    content = '';
+    content = '',
+    loadProducts = new Request('http://localhost:3000/products');
 
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-
-    rawFile.overrideMimeType("application/json");
-
-    rawFile.open("GET", file, true);
-
-    rawFile.onreadystatechange = () => {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
+fetch(loadProducts)
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
         }
-    }
+    })
+    .then(response => {
+        renderProducts(response);
+    })
+    .catch(error => {
+        alert(error);
+    });
 
-    rawFile.send(null);
-}
-
-// let getProducts = new Request('http://localhost:3000/products');
-
-// fetch(getProducts)
-//     .then(response => {
-//         return response.text();
-//     })
-//     .then(response => {
-//         console.log(response);
-//     });
-
-
-// var req = new XMLHttpRequest();
-
-// req.addEventListener('load', (e) => {
-//     console.log(e);
-// })
-// req.open('GET', 'http://localhost:3000/products', true);
-// req.send();
-
-readTextFile("./models/products.json", (text) => {
-    let datasResponse = JSON.parse(text);//.slice(0, 3); // para fazer a paginação depois us guri vão se enlouquecer
-
-    datasResponse.forEach(o => products.push(new Product(o)));
-
+renderProducts = (products) => {
     products.forEach((product) => {
         content += `
         <div>
@@ -92,4 +67,4 @@ readTextFile("./models/products.json", (text) => {
             }
         });
     });
-});
+};
