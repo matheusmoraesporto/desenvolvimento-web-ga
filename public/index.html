@@ -31,7 +31,12 @@
             <p>Olá, usuário!!</p>
         </div>
 
-        <img src="../assets/icons/cart.png" alt="Carrinho" class="item-header cursor-pointer">
+        <button id="btn-cart" class="cart cursor-pointer flex-row">
+            <img src="../assets/icons/cart.png" alt="Carrinho" class="item-header">
+            <span id="cart-length" hidden>
+                <!-- Adiciona o span com a quantidade pelo JS -->
+            </span>
+        </button>
     </header>
 
     <div class="main">
@@ -50,10 +55,11 @@
         <p></p>
         <p>© 2021 JM Games</p>
     </footer>
-    
-    <script type="text/javascript" src="./data/produtos.json"></script>
 
-    <script src="./controllers/objects.js"></script>
+    <script src="./models/products.json"></script>
+
+    <script src="./models/Product.js"></script>
+    <script src="./models/ProductCart.js"></script>
     <script src="./controllers/utils.js"></script>
     <script src="./controllers/index.js"></script>
 </body>

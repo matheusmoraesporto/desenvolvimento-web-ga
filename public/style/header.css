@@ -57,3 +57,10 @@ header input::after {
 .cart:hover {
     filter: brightness(0.9);
 }
+
+#cart-length {
+    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
