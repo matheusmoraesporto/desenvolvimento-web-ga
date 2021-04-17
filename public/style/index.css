@@ -33,3 +33,22 @@ button:focus {
     display: flex;
     flex-direction: row;
 }
+
+.card-products {
+    padding: 30px 10px 15px;
+    border-style: solid;
+}
+
+.products-images {
+    width: 200px;
+    border-style: solid;
+}
+
+.description {
+    max-width: 187px;
+}
+
+.products-description {
+    font-size: 16px;
+    font-weight: 600;
+}

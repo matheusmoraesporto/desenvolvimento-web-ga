@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": 1,
         "description": "Controle Dreamcast",
         "img": "../assets/objectImages/Controle_Dreamcast_Sega.png",
@@ -17,7 +16,7 @@
     },
     {
         "id": 3,
-        "description": "Controle Nintendo GameCube Jet Black",
+        "description": "Controle Nintendo GameCube",
         "img": "../assets/objectImages/Controle_Nintendo_GameCube_JetBlack.png",
         "value": 299.99,
         "branch": "Nintendo",
@@ -49,7 +48,7 @@
     },
     {
         "id": 1,
-        "description": "Controle Nintendo Wii U",
+        "description": "Controle Nintendo Wii",
         "img": "../assets/objectImages/Controle_Nintendo_WiiU.png",
         "value": 189.99,
         "branch": "Nintendo",
@@ -217,7 +216,7 @@
     },
     {
         "id": 1,
-        "description": "Nintendo GameCube Jet Black",
+        "description": "Nintendo GameCube",
         "img": "../assets/objectImages/Nintendo_GameCube_JetBlack.png",
         "value": 599.99,
         "branch": "Nintendo",
@@ -225,7 +224,7 @@
     },
     {
         "id": 1,
-        "description": "Nintendo NES Classic Edition",
+        "description": "Nintendo NES",
         "img": "../assets/objectImages/Nintendo_NES_Classic_Edition.png",
         "value": 499.99,
         "branch": "Nintendo",

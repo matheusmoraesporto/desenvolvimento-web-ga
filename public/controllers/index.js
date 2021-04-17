@@ -39,15 +39,19 @@ function readTextFile(file, callback) {
 // req.send();
 
 readTextFile("./models/products.json", (text) => {
-    let datasResponse = JSON.parse(text);//.slice(0, 3); // para fazer a paginação depois us guri vão se enlouquecer
+    let datasResponse = JSON.parse(text); //.slice(0, 3); // para fazer a paginação depois us guri vão se enlouquecer
 
     datasResponse.forEach(o => products.push(new Product(o)));
 
     products.forEach((product) => {
         content += `
-        <div>
-            <img src="${product.img}" alt="Carrinho" class="cursor-pointer">
-            <p id="product-${product.id}">${product.description}</p>
+        <div class="card-products">
+            <img src="${product.img}" alt="Carrinho" class="cursor-pointer products-images">
+
+            <div class="description">
+            <p id="product-${product.id}" class="products-description">${product.description}</p>
+            </div>
+            
             <button id="btn-add-product-${product.id}" class="add-product">Adicionar ao carrinho</button>
         </div>
         `;
@@ -73,8 +77,7 @@ readTextFile("./models/products.json", (text) => {
                         o.quantidade++;
                     }
                 });
-            }
-            else {
+            } else {
                 cart.push(new ProductCart(newProduct, 1));
             }
 
@@ -86,8 +89,7 @@ readTextFile("./models/products.json", (text) => {
                 spnCart.hidden = false;
 
                 spnCart.textContent = productsInCart;
-            }
-            else {
+            } else {
                 spnCart.hidden = true;
             }
         });
