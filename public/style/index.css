@@ -5,6 +5,10 @@
     font-size: 16px;
 }
 
+body {
+    position: relative;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -28,6 +32,20 @@ button:focus {
     align-items: center;
     display: flex;
     flex-direction: row;
+}
+
+.products-in-cart {
+    width: 300px; 
+    background-color: #ffffff;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    min-height: 50px;
+}
+
+.products-in-cart p {
+    text-align: center;
+    padding-top: 10px;
 }
 
 .main {
@@ -76,7 +94,8 @@ button:focus {
     align-content: flex-end;
 }
 
-.add-product {
+.add-product, 
+.go-cart {
     border: none;
     border-radius: 5px;
     padding: 10px;

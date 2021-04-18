@@ -26,7 +26,10 @@
 
         <div class="user flex-row">
             <img src="../assets/icons/user.png" alt="Usuário" class="item-header">
-            <p>Olá, usuário!!</p>
+            <div>
+                <p>Bem vindo(a)</p>
+                <p>Entrar ou cadastrar</p>
+            </div>
         </div>
 
         <button id="btn-cart" class="cart cursor-pointer flex-row">
@@ -36,6 +39,13 @@
             </span>
         </button>
     </header>
+
+    <aside id="products-in-cart" class="products-in-cart" hidden>
+        <div id="products-in-cart-detail">
+
+        </div>
+        <p id="empty-cart">O carrinho está vazio.</p>
+    </aside>
 
     <div class="main">
         <div class="filtros">
