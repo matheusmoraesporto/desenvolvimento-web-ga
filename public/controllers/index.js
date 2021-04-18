@@ -1,12 +1,21 @@
 let productsComponent = document.getElementsByClassName('products')[0],
     inputSearch = document.getElementById('search'),
     btnFind = document.getElementsByClassName('find')[0],
+    asideProductsCart = document.getElementById('products-in-cart'),
+    asideProductsCartDetails = document.getElementById('products-in-cart-detail'),
+    btnCart = document.getElementById('btn-cart'),
+    pEmptyCart = document.getElementById('empty-cart'),
     filtersTypeProduct = Array.prototype.slice.call(document.getElementsByClassName('filters-type-product')),
     products = [],
     cart = [],
     filtersType = [],
     filtersBranch = [],
     loadProducts = new Request('http://localhost:3000/products');
+
+
+btnCart.addEventListener('click', () => {
+    asideProductsCart.hidden = !asideProductsCart.hidden;
+});
 
 fetch(loadProducts)
     .then(response => {
@@ -31,17 +40,16 @@ renderProducts = (items) => {
             <img src="${product.img}" alt="Carrinho" class="products-images">
 
             <div class="description">
-            <p id="product-${product.id}" class="products-description">${product.description}</p>
+                <p id="product-${product.id}" class="products-description">${product.description}</p>
             </div>
 
             <p id="value-${product.value}" class="products-value">R$ ${product.value}<p/>
             
             <div class="cart-button">
-            <button id="btn-add-product-${product.id}" class="cursor-pointer add-product">Adicionar ao carrinho</button>
+                <button id="btn-add-product-${product.id}" class="cursor-pointer add-product">Adicionar ao carrinho</button>
             </div>
             
-            </div>
-        `;
+        </div>`;
     });
 
     Utils.pushComponent(productsComponent, content);
@@ -76,8 +84,32 @@ renderProducts = (items) => {
                 spnCart.hidden = false;
 
                 spnCart.textContent = productsInCart;
+                
+                pEmptyCart.hidden = true;
+
+                let content = '';
+
+                cart.forEach(o => {
+                    content +=
+                        `<p>${o.description}</p>`;
+                });
+
+                content+= '<button id="go-cart" class="cursor-pointer go-cart">Ir para o carrinho</button>';
+
+                // aqui adiciona os itens que estão no carrinho
+                asideProductsCartDetails.innerHTML = content;
+
+                let btnGoCart = document.getElementById('go-cart');
+
+                btnGoCart.addEventListener('click', (event)=> {
+                    // buscar o main pra tratar se exibe ou não
+                });
             } else {
                 spnCart.hidden = true;
+
+                /// aqui remove os itens que estão no carrinho
+                asideProductsCartDetails.innerHTML = '';
+                pEmptyCart.hidden = false;
             }
         });
     });
