@@ -31,47 +31,7 @@ loadProducts = () => {
 }
 
 function goMainView() {
-    let contentMain = '';
-
-    contentMain += `
-        <div class="filtros">
-            <h4>Tipo de produto</h4>
-            <div class="flex-row">
-                <input type="checkbox" name="consoles" id="Console" class="filters-type-product">
-                <label for="consoles">Consoles</label>
-            </div>
-
-            <div class="flex-row">
-                <input type="checkbox" name="acessorios" id="Acessorio" class="filters-type-product">
-                <label for="acessorios">Acessórios</label>
-            </div>
-
-            <h4>Marca</h4>
-            <div class="flex-row">
-                <input type="checkbox" name="nintendo" id="Nintendo" class="filters-type-product">
-                <label for="playstation">Nintendo</label>
-            </div>
-
-            <div class="flex-row">
-                <input type="checkbox" name="playstation" id="Playstation" class="filters-type-product">
-                <label for="acessorios">Playstation</label>
-            </div>
-
-            <div class="flex-row">
-                <input type="checkbox" name="sega" id="Sega" class="filters-type-product">
-                <label for="sega">Sega</label>
-            </div>
-
-            <div class="flex-row">
-                <input type="checkbox" name="xbox" id="Xbox" class="filters-type-product">
-                <label for="xbox">Xbox</label>
-            </div>
-        </div>
-
-        <div class="products flex-wrap">
-        </div>`;
-
-    Utils.pushComponent(divMain, contentMain);
+    Utils.pushComponent(divMain, ViewProducts.getFilters());
 
     asideProductsCart.hidden = true;
 
@@ -103,29 +63,9 @@ addItensCart = () => {
 }
 
 renderProducts = (items) => {
-    let productsComponent = document.getElementsByClassName('products')[0],
-        content = '';
+    let productsComponent = document.getElementsByClassName('products')[0];
 
-    // Cria o componente dos cards dos produtos
-    items.forEach((product) => {
-        content += `
-        <div class="card-products">
-            <img src="${product.img}" alt="Carrinho" class="products-images">
-
-            <div class="description">
-                <p id="product-${product.id}" class="products-description">${product.description}</p>
-            </div>
-
-            <p id="value-${product.value}" class="products-value">R$ ${product.value}<p/>
-            
-            <div class="cart-button">
-                <button id="btn-add-product-${product.id}" class="cursor-pointer add-product">Adicionar ao carrinho</button>
-            </div>
-            
-        </div>`;
-    });
-
-    Utils.pushComponent(productsComponent, content);
+    Utils.pushComponent(productsComponent, ViewProducts.getProducts(items));
 
     let allBtnAddProduct = Array.prototype.slice.call(document.getElementsByClassName('add-product'));
 
@@ -152,31 +92,14 @@ renderProducts = (items) => {
             addItensCart();
 
             if (cart.length > 0) {
-                let content = '';
-
-                cart.forEach(o => {
-                    content +=
-                        `<p>${o.description}</p>`;
-                });
-
-                content += '<button id="go-cart" class="cursor-pointer go-cart">Ir para o carrinho</button>';
-
                 // aqui adiciona os itens que estão no carrinho
-                asideProductsCartDetails.innerHTML = content;
+                asideProductsCartDetails.innerHTML = ViewOrder.getResumeOrder(cart);
 
                 let btnGoCart = document.getElementById('go-cart');
 
                 // Cria a view com os detalhes da compra
                 btnGoCart.addEventListener('click', () => {
-                    let contentCart = '';
-
-                    contentCart +=
-                        `<div>
-                            <button type="submit" id="continue-buying" class="cursor-pointer">Continuar comprando</button>
-                            <button type="submit" id="finish" class="cursor-pointer">Finalizar a compra</button>
-                        </div>`;
-
-                    Utils.pushComponent(divMain, contentCart);
+                    Utils.pushComponent(divMain, ViewOrder.getOrder());
 
                     asideProductsCart.hidden = true;
 
@@ -187,28 +110,8 @@ renderProducts = (items) => {
 
                     btnFinish.addEventListener('click', () => {
                         // Implementar as validações do formulário
-
-                        let contentFinish = '';
-
-                        contentFinish +=
-                            `<div>
-                                <div class="flex-row">
-                                    <div>
-                                        <h3>Resumo do pedido</h3>
-                                        <p>Número do pedido: <span>${parseInt(Math.random() * 100000)}</span></p>
-                                        <p>Valor do pedido: <span>R$ESTÁ FIXO NEGÃO</span></p>
-                                    </div>
-                                    <div>
-                                        <h3>Pedido conlcluído com sucesso!</h3>
-                                        <img src="../assets/Icons/ok.png" alt="Sucesso" class="">
-                                    </div>
-                                </div>
-                                
-                                <div class="flex-row">
-                                    <p>O boleto de cobrança foi enviado para o seu e-mail.</p>
-                                    <button type="submit" id="back" class="cursor-pointer">Voltar ao início <img src="../assets/Icons/log-out.svg" alt="Voltar" class=""></button>
-                                </div>
-                            </div>`;
+                        
+                        let contentFinish = ViewOrderFinish.getOrderFinish();
 
                         cart = [];
 
