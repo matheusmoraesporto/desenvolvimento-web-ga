@@ -6,7 +6,7 @@ class ViewProducts {
         products.forEach((product) => {
             content += `
             <div class="card-products">
-                <img src="${product.img}" alt="Carrinho" class="products-images">
+                <img src="${product.img}" alt="${product.description}" class="products-images">
     
                 <div class="description">
                     <p id="product-${product.id}" class="products-description">${product.description}</p>
