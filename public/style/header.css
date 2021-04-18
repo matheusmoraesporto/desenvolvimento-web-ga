@@ -40,6 +40,10 @@ header input::after {
     padding-right: 5px;
 }
 
+.user p {
+    font-size: 14px;
+}
+
 .user img {
     margin-right: 15px;
 }

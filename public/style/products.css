@@ -9,7 +9,8 @@
     margin: 15px 0 0 10px;
 }
 
-.products-value {
+.products-value,
+.card-product-value {
     font-size: 18px;
     font-weight: bold;
     color: #0077B6;
@@ -37,7 +38,7 @@
 .filtros {
     min-width: 165px;
     height: 255px;
-    margin: 15px 15px 0 30px;
+    margin: 15px 13px 0 60px;
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
