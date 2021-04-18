@@ -1,0 +1,23 @@
+.content-table {
+    width: 80%;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    background-color: greenyellow;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.table-product {
+    text-align: left;
+}
+
+.head-order tr th {
+    font-weight: normal;
+}
+
+.img-order {
+    width: 90px;
+}

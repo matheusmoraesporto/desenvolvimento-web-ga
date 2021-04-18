@@ -5,7 +5,8 @@
         "img": "../assets/objectImages/Controle_Dreamcast_Sega.png",
         "value": 189.99,
         "branch": "Sega",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "9272"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "img": "../assets/objectImages/Controle_Nintendo_64.png",
         "value": 149.99,
         "branch": "Nintendo",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "3826"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "img": "../assets/objectImages/Controle_Nintendo_GameCube_JetBlack.png",
         "value": 299.99,
         "branch": "Nintendo",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "3363"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "img": "../assets/objectImages/Controle_Nintendo_NES.png",
         "value": 79.99,
         "branch": "Nintendo",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "4219"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "img": "../assets/objectImages/Controle_Nintendo_SNES.png",
         "value": 49.99,
         "branch": "Nintendo",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "4140"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "img": "../assets/objectImages/Controle_Nintendo_Wii.png",
         "value": 139.99,
         "branch": "Nintendo",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "2351"
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "img": "../assets/objectImages/Controle_Nintendo_WiiU.png",
         "value": 189.99,
         "branch": "Nintendo",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "2586"
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "img": "../assets/objectImages/Controle_Playstation_1.png",
         "value": 74.99,
         "branch": "Playstation",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "4015"
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "img": "../assets/objectImages/Controle_Playstation_2.png",
         "value": 99.99,
         "branch": "Playstation",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "9578"
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "img": "../assets/objectImages/Controle_Playstation_3.png",
         "value": 109.99,
         "branch": "Playstation",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "8678"
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "img": "../assets/objectImages/Controle_Playstation_4.png",
         "value": 199.99,
         "branch": "Playstation",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "5334"
     },
     {
         "id": 12,
@@ -93,7 +104,8 @@
         "img": "../assets/objectImages/Controle_Playstation_5.png",
         "value": 449.99,
         "branch": "Playstation",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "2160"
     },
     {
         "id": 13,
@@ -101,7 +113,8 @@
         "img": "../assets/objectImages/Controle_Xbox.png",
         "value": 259.99,
         "branch": "Xbox",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "7110"
     },
     {
         "id": 14,
@@ -109,7 +122,8 @@
         "img": "../assets/objectImages/Controle_Xbox_360.png",
         "value": 299.99,
         "branch": "Xbox",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "6053"
     },
     {
         "id": 15,
@@ -117,7 +131,8 @@
         "img": "../assets/objectImages/Controle_Xbox_One_S.png",
         "value": 429.99,
         "branch": "Xbox",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "9198"
     },
     {
         "id": 16,
@@ -125,7 +140,8 @@
         "img": "../assets/objectImages/Controle_Xbox_One_X.png",
         "value": 429.99,
         "branch": "Xbox",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "1121"
     },
     {
         "id": 17,
@@ -133,7 +149,8 @@
         "img": "../assets/objectImages/Controle_Xbox_Series_S.png",
         "value": 489.99,
         "branch": "Xbox",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "1885"
     },
     {
         "id": 18,
@@ -141,7 +158,8 @@
         "img": "../assets/objectImages/Controle_Xbox_Series_X.png",
         "value": 489.99,
         "branch": "Xbox",
-        "type": "Acessorio"
+        "type": "Acessorio",
+        "productCode": "9925"
     },
     {
         "id": 19,
@@ -149,7 +167,8 @@
         "img": "../assets/objectImages/Dreamcast_Sega.png",
         "value": 799.99,
         "branch": "Sega",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2911"
     },
     {
         "id": 20,
@@ -157,15 +176,17 @@
         "img": "../assets/objectImages/Game_Gear_Sega.png",
         "value": 599.99,
         "branch": "Sega",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "4383"
     },
     {
         "id": 21,
-        "description": "New Nintendo 3DS XL",
+        "description": "Nintendo 3DS XL",
         "img": "../assets/objectImages/New_Nintendo_3DS_XL.png",
         "value": 899.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "3226"
     },
     {
         "id": 22,
@@ -173,7 +194,8 @@
         "img": "../assets/objectImages/Nintendo_2DS.png",
         "value": 929.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "7483"
     },
     {
         "id": 23,
@@ -181,7 +203,8 @@
         "img": "../assets/objectImages/Nintendo_3DS_XL.png",
         "value": 829.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "8091"
     },
     {
         "id": 24,
@@ -189,7 +212,8 @@
         "img": "../assets/objectImages/Nintendo_64.png",
         "value": 559.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "7408"
     },
     {
         "id": 25,
@@ -197,7 +221,8 @@
         "img": "../assets/objectImages/Nintendo_DS_Lite.png",
         "value": 449.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "6280"
     },
     {
         "id": 26,
@@ -205,7 +230,8 @@
         "img": "../assets/objectImages/Nintendo_DSi.png",
         "value": 929.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2894"
     },
     {
         "id": 27,
@@ -213,7 +239,8 @@
         "img": "../assets/objectImages/Nintendo_GameBoy.png",
         "value": 299.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "8801"
     },
     {
         "id": 28,
@@ -221,7 +248,8 @@
         "img": "../assets/objectImages/Nintendo_GameCube_JetBlack.png",
         "value": 599.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "5354"
     },
     {
         "id": 29,
@@ -229,7 +257,8 @@
         "img": "../assets/objectImages/Nintendo_NES_Classic_Edition.png",
         "value": 499.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "5957"
     },
     {
         "id": 30,
@@ -237,7 +266,8 @@
         "img": "../assets/objectImages/Nintendo_SNES.png",
         "value": 649.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "9392"
     },
     {
         "id": 31,
@@ -245,7 +275,8 @@
         "img": "../assets/objectImages/Nintendo_Switch.png",
         "value": 2539.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "3290"
     },
     {
         "id": 32,
@@ -253,7 +284,8 @@
         "img": "../assets/objectImages/Nintendo_Wii.png",
         "value": 559.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "7717"
     },
     {
         "id": 33,
@@ -261,7 +293,8 @@
         "img": "../assets/objectImages/Nintendo_WiiU.png",
         "value": 299.99,
         "branch": "Nintendo",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "9686"
     },
     {
         "id": 34,
@@ -269,7 +302,8 @@
         "img": "../assets/objectImages/Playstation1.png",
         "value": 389.99,
         "branch": "Playstation",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2011"
     },
     {
         "id": 35,
@@ -277,7 +311,8 @@
         "img": "../assets/objectImages/Playstation2.png",
         "value": 399.99,
         "branch": "Playstation",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2633"
     },
     {
         "id": 36,
@@ -285,7 +320,8 @@
         "img": "../assets/objectImages/Playstation3.png",
         "value": 899.99,
         "branch": "Playstation",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "1124"
     },
     {
         "id": 37,
@@ -293,7 +329,8 @@
         "img": "../assets/objectImages/Playstation4.png",
         "value": 2189.99,
         "branch": "Playstation",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2773"
     },
     {
         "id": 38,
@@ -301,7 +338,8 @@
         "img": "../assets/objectImages/Playstation5.png",
         "value": 3799.99,
         "branch": "Playstation",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "3908"
     },
     {
         "id": 39,
@@ -309,7 +347,8 @@
         "img": "../assets/objectImages/Sony_PSP.png",
         "value": 199.99,
         "branch": "Playstation",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "8681"
     },
     {
         "id": 40,
@@ -317,7 +356,8 @@
         "img": "../assets/objectImages/Xbox.png",
         "value": 699.99,
         "branch": "Xbox",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "8417"
     },
     {
         "id": 41,
@@ -325,7 +365,8 @@
         "img": "../assets/objectImages/Xbox_360.png",
         "value": 1099.99,
         "branch": "Xbox",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2567"
     },
     {
         "id": 42,
@@ -333,7 +374,8 @@
         "img": "../assets/objectImages/Xbox_One_S.png",
         "value": 2299.99,
         "branch": "Xbox",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "9281"
     },
     {
         "id": 43,
@@ -341,7 +383,8 @@
         "img": "../assets/objectImages/Xbox_One_X_Black.png",
         "value": 2299.99,
         "branch": "Xbox",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "2962"
     },
     {
         "id": 44,
@@ -349,7 +392,8 @@
         "img": "../assets/objectImages/Xbox_Series_S.png",
         "value": 2699.99,
         "branch": "Xbox",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "6989"
     },
     {
         "id": 45,
@@ -357,6 +401,7 @@
         "img": "../assets/objectImages/Xbox_Series_X.png",
         "value": 2699.99,
         "branch": "Xbox",
-        "type": "Console"
+        "type": "Console",
+        "productCode": "5167"
     }
 ]

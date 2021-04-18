@@ -99,7 +99,7 @@ renderProducts = (items) => {
 
                 // Cria a view com os detalhes da compra
                 btnGoCart.addEventListener('click', () => {
-                    Utils.pushComponent(divMain, ViewOrder.getOrder());
+                    Utils.pushComponent(divMain, ViewOrder.getOrder(cart));
 
                     asideProductsCart.hidden = true;
 
