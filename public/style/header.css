@@ -36,7 +36,6 @@ header input::after {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     background-color: #ffffff;
-    /* border-block-color: inherit; */
     border-style: hidden;
     padding-right: 5px;
 }
@@ -54,9 +53,6 @@ header input::after {
     width: 55px;
 }
 
-.cart:hover {
-    filter: brightness(0.9);
-}
 
 #cart-length {
     background-color: #00B4D8;
