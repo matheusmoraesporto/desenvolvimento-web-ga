@@ -34,6 +34,20 @@ button:focus {
     flex-direction: row;
 }
 
+.products-in-cart {
+    width: 300px; 
+    background-color: #ffffff;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    min-height: 50px;
+}
+
+.products-in-cart p {
+    text-align: center;
+    padding-top: 10px;
+}
+
 .main {
     justify-content: center;
     display: flex;
@@ -48,21 +62,7 @@ button:focus {
     background-color: white;
     border-radius: 5px;
     filter: drop-shadow(0 0 3px #BCBCBC);
-    margin: 15px 0 0 10px;
-}
-
-.products-in-cart {
-    width: 300px;
-    background-color: #ffffff;
-    position: absolute;
-    right: 0;
-    z-index: 1;
-    min-height: 50px;
-}
-
-.products-in-cart p {
-    text-align: center;
-    padding-top: 10px;
+    margin: 15px 3px 0 20px;
 }
 
 .products-value {
@@ -94,7 +94,7 @@ button:focus {
     align-content: flex-end;
 }
 
-.add-product,
+.add-product, 
 .go-cart {
     border: none;
     border-radius: 5px;
@@ -102,18 +102,4 @@ button:focus {
     background-color: #0077B6;
     color: white;
     margin-top: 10px;
-}
-
-.filtros {
-    min-width: 165px;
-    height: 255px;
-    margin: 15px 15px 0 30px;
-    background-color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 30px;
-    padding: 10px 0 0 10px;
-    border-radius: 5px;
-    filter: drop-shadow(0px 0px 2px #c9c9c9);
 }
