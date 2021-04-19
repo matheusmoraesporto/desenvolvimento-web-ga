@@ -28,7 +28,8 @@ header input::after {
 }
 
 .item-header {
-    height: 30px;
+    height: 25px;
+    margin-right: 5px;
 }
 
 .find {
@@ -37,11 +38,11 @@ header input::after {
     border-top-right-radius: 20px;
     background-color: #ffffff;
     border-style: hidden;
-    padding-right: 5px;
+    padding: 5.5px 6px;
 }
 
 .user p {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .user img {

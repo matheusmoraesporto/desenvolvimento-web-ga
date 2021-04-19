@@ -65,7 +65,8 @@ button:focus {
 }
 
 .add-product,
-.go-cart {
+.go-cart,
+.payment button {
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -135,4 +136,15 @@ button:focus {
 
 .font-bold {
     font-weight: bold;
+}
+
+#triangle {
+    width: 0;
+    position: absolute;
+    height: 0;
+    bottom: 123px;
+    left: 173px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
 }
