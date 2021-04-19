@@ -136,3 +136,11 @@ button:focus {
 .font-bold {
     font-weight: bold;
 }
+
+.filter-drop-shadow {
+    filter: drop-shadow(0 0 3px #BCBCBC);
+}
+
+.justify-content-center {
+    justify-content: center;
+}

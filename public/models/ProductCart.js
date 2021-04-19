@@ -1,5 +1,5 @@
 class ProductCart {
-    constructor(obj, quantidade) {
+    constructor(obj, quantity) {
         let { branch, description, id, img, type, value, productCode } = obj;
         this.branch = branch;
         this.description = description;
@@ -8,6 +8,6 @@ class ProductCart {
         this.type = type;
         this.value = value;
         this.productCode = productCode;
-        this.quantidade = quantidade;
+        this.quantity = quantity;
     }
 }

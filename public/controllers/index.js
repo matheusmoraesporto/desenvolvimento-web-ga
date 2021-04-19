@@ -38,6 +38,25 @@ function goMainView() {
     loadProducts();
 }
 
+async function onDeleteItem(event) {
+    let id = event.srcElement.id.replace('delete-', ''),
+        tbody = document.getElementById('tbody-products'),
+        spnTotal = document.getElementById('spn-total'),
+        newTotal = 0;
+
+    cart = cart.filter(o => o.id != id);
+
+    await tbody.removeChild(event.srcElement.parentElement.parentElement);
+
+    asideProductsCartDetails.innerHTML = ViewOrder.getResumeOrder(cart);
+
+    addItensCart();
+
+    cart.forEach(o => newTotal += o.quantity * o.value);
+
+    spnTotal.textContent = newTotal;
+}
+
 addItensCart = () => {
     let spnCart = document.getElementById('cart-length');
 
@@ -45,7 +64,7 @@ addItensCart = () => {
         // Faz o tratamento para exibir a quantidade de itens no carrinho
         let productsInCart = 0;
 
-        cart.forEach(o => productsInCart += o.quantidade);
+        cart.forEach(o => productsInCart += o.quantity);
 
         spnCart.hidden = false;
 
@@ -82,7 +101,7 @@ renderProducts = (items) => {
             if (cart.some(o => o.id === newProduct.id)) {
                 cart.forEach(o => {
                     if (o.id === newProduct.id) {
-                        o.quantidade++;
+                        o.quantity++;
                     }
                 });
             } else {
@@ -104,13 +123,18 @@ renderProducts = (items) => {
                     asideProductsCart.hidden = true;
 
                     let btnContinueBuying = document.getElementById('continue-buying'),
-                        btnFinish = document.getElementById('finish');
+                        btnFinish = document.getElementById('finish'),
+                        allBtnDelete = Array.prototype.slice.call(document.getElementsByClassName('delete'));
+
+                    allBtnDelete.forEach(o => {
+                        o.addEventListener('click', onDeleteItem);
+                    });
 
                     btnContinueBuying.addEventListener('click', goMainView);
 
                     btnFinish.addEventListener('click', () => {
                         // Implementar as validações do formulário
-                        
+
                         let contentFinish = ViewOrderFinish.getOrderFinish();
 
                         cart = [];
