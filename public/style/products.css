@@ -5,8 +5,7 @@
     padding: 20px 15px 15px;
     background-color: white;
     border-radius: 5px;
-    filter: drop-shadow(0 0 3px #BCBCBC);
-    margin: 15px;
+    margin: 15px 0 0 10px;
 }
 
 .products-value,

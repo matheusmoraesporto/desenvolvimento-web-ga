@@ -5,7 +5,7 @@ class ViewProducts {
         // Cria o componente dos cards dos produtos
         products.forEach((product) => {
             content += `
-            <div class="card-products">
+            <div class="card-products filter-drop-shadow">
                 <img src="${product.img}" alt="${product.description}" class="products-images">
     
                 <div class="description">

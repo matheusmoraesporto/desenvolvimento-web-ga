@@ -3,7 +3,6 @@ class ViewOrder {
         let content = '';
 
         cart.forEach(o => {
-            console.log(o.quantidade);
             content +=
                 `<div class="product-into-cart">
                     
@@ -13,7 +12,7 @@ class ViewOrder {
                             <img src="${o.img}">
                             <div class="order-description">
                             <p>${o.description}</p>
-                            <span>Quantidade: ${o.quantidade}</span>
+                            <span>Quantidade: ${o.quantity}</span>
                             </div>
                         </div>
                         
@@ -29,8 +28,9 @@ class ViewOrder {
     }
 
     static getOrder(items) {
-        let content = `
-        <div class="content-table">
+        let total = 0.0,
+            content = `
+        <div class="content-table filter-drop-shadow">
             <table>
                 <thead class="head-order">
                     <tr>
@@ -41,13 +41,14 @@ class ViewOrder {
                         <th>Excluir</th>
                     </tr>
                 </thead>
-                <tbody>`;
+                <tbody id="tbody-products">`;
 
         items.forEach(o => {
-            content+= `
+            let valueXQuantity = (o.value * o.quantity).toFixed(2);
+            content += `
                 <tr>
                     <td>
-                        <div class="flex-row table-product">
+                        <div class="flex-row table-product filter-drop-shadow">
                             <img class="img-order" src="${o.img}" alt="${o.description}">
 
                             <div>
@@ -58,20 +59,39 @@ class ViewOrder {
                         </div>
                     </td>
                     <td class="font-bold">R$ ${o.value}</td>
-                    <td class="font-bold">${o.quantidade}</td>
-                    <td id="value-${o.id}" class="font-bold">R$ ${o.value * o.quantidade}</td>
-                    <td><img class="icon-20" src="../assets/Icons/cash.png"></td>
+                    <td class="font-bold">
+                        <div class="flex-row justify-content-center">
+                            <button class="cursor-pointer bkg-light-blue">-</button>
+                            <p id="quantity-${o.id}" class="bkg-light-blue">${o.quantity}</p>
+                            <button class="cursor-pointer bkg-light-blue">+</button>
+                        </div>
+                    </td>
+                    <td id="value-${o.id}" class="font-bold">R$ ${valueXQuantity}</td>
+                    <td><img id="delete-${o.id}" class="icon-20 cursor-pointer delete" src="../assets/Icons/trash.svg"></td>
                 </tr>
             `;
+
+            total += parseFloat(valueXQuantity);
         });
 
         content += `</tbody>
                 </table>
 
-                <div>
-                    <button type="submit" id="continue-buying" class="cursor-pointer">Continuar comprando</button>
-                    <button type="submit" id="finish" class="cursor-pointer">Finalizar a compra</button>
+                <div class="total">
+                    Total: <span id="spn-total">R$ ${total}</span>
                 </div>
+
+                <div class="flex-row">
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <button type="submit" id="continue-buying" class="cursor-pointer">Continuar comprando</button>
+                        <button type="submit" id="finish" class="cursor-pointer">Finalizar a compra</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forms">
             </div>`;
 
         return content;

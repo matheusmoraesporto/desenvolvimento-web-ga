@@ -1,17 +1,32 @@
 .content-table {
     width: 80%;
+    margin: 20px;
 }
 
 table {
     width: 100%;
     text-align: center;
-    background-color: greenyellow;
+    background-color: #C1E7F0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-spacing: 0;
+}
+
+table tr {
+    height: 35px;
+}
+
+table td {
+    background-color: #ffffff;
 }
 
 .table-product {
     text-align: left;
+    padding: 10px;
+}
+
+.table-product img {
+    margin-right: 10%;
 }
 
 .head-order tr th {
@@ -20,4 +35,18 @@ table {
 
 .img-order {
     width: 90px;
+}
+
+td .bkg-light-blue {
+    background-color: #EAFBFF;
+    width: 25px;
+    border: none;
+}
+
+.total {
+    text-align: end;
+    padding: 20px 10px 20px 10px;
+    background-color: #EAF5F8;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

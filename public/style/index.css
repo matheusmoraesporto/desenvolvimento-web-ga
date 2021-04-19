@@ -148,3 +148,11 @@ button:focus {
     border-right: 10px solid transparent;
     border-bottom: 10px solid #ffffff;
 }
+
+.filter-drop-shadow {
+    filter: drop-shadow(0 0 3px #BCBCBC);
+}
+
+.justify-content-center {
+    justify-content: center;
+}
