@@ -54,7 +54,7 @@ async function onDeleteItem(event) {
 
     cart.forEach(o => newTotal += o.quantity * o.value);
 
-    spnTotal.textContent = newTotal;
+    spnTotal.textContent = `R$ ${newTotal}`;
 }
 
 addItensCart = () => {
@@ -71,8 +71,7 @@ addItensCart = () => {
         spnCart.textContent = productsInCart;
 
         pEmptyCart.hidden = true;
-    }
-    else {
+    } else {
         spnCart.hidden = true;
 
         /// aqui remove os itens que estão no carrinho
@@ -160,14 +159,13 @@ function onCheckFilter(event) {
 
     if (property === 'type') {
         filtersType = defineFilter(filtersType, checked, id);
-    }
-    else {
+    } else {
         filtersBranch = defineFilter(filtersBranch, checked, id);
     }
 
     productsFiltered = products.filter(o =>
-        (filtersType.length === 0 || filtersType.includes(o.type))
-        && (filtersBranch.length === 0 || filtersBranch.includes(o.branch)));
+        (filtersType.length === 0 || filtersType.includes(o.type)) &&
+        (filtersBranch.length === 0 || filtersBranch.includes(o.branch)));
 
     renderProducts(productsFiltered);
 };
@@ -175,8 +173,7 @@ function onCheckFilter(event) {
 defineFilter = (items, checked, id) => {
     if (checked) {
         items.push(id);
-    }
-    else {
+    } else {
         items = items.filter(o => o !== id);
     }
 
@@ -202,8 +199,7 @@ btnFind.addEventListener('click', (event) => {
     if (inputSearch.value.length > 0) {
         let productsSerach = products.filter(o => o.description.toLowerCase().includes(inputSearch.value.toLowerCase()));
         renderProducts(productsSerach);
-    }
-    else {
+    } else {
         renderProducts(products);
     }
 });
@@ -211,8 +207,7 @@ btnFind.addEventListener('click', (event) => {
 inputSearch.addEventListener('change', () => {
     if (!inputSearch.value) {
         renderProducts(products);
-    }
-    else {
+    } else {
         let productsSerach = products.filter(o => o.description.toLowerCase().includes(inputSearch.value.toLowerCase()));
         renderProducts(productsSerach);
     }

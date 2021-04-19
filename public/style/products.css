@@ -5,7 +5,7 @@
     padding: 20px 15px 15px;
     background-color: white;
     border-radius: 5px;
-    margin: 15px 0 0 10px;
+    margin: 15px 15px 10px 20px;
 }
 
 .products-value,
@@ -35,7 +35,7 @@
 }
 
 .filtros {
-    min-width: 195px;
+    min-width: 200px;
     height: 250px;
     margin: 15px 27px 0 107px;
     background-color: #EAFBFF;
