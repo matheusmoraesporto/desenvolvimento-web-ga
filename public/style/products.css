@@ -96,8 +96,9 @@ span {
     outline: none;
     padding: 15px;
     border-radius: 25px;
-  }
-  
-  #gotop:hover {
-    background-color: #555;
-  }
+    background-color: #06BADE;
+}
+
+#gotop:hover {
+    background-color: #51daf5;
+}
