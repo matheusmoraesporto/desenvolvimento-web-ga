@@ -21,6 +21,11 @@ class ViewProducts {
             </div>`;
         });
 
+        content += `
+            <button id="gotop" class="cursor-pointer" title="Voltar para o topo da página">
+                <img src="../assets/Icons/rounded-up.svg" class="icon-20">
+            </button>`;
+
         return content;
     }
 

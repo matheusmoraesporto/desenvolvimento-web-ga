@@ -35,6 +35,13 @@ function goMainView() {
 
     asideProductsCart.hidden = true;
 
+    // necessário, pois quando recriava a tela não estava adicionando o evento de click dos filtros
+    let newfiltersTypeProduct = Array.prototype.slice.call(document.getElementsByClassName('filters-type-product'));
+
+    newfiltersTypeProduct.forEach(o => {
+        o.addEventListener('click', onCheckFilter);
+    });
+
     loadProducts();
 }
 
@@ -84,6 +91,24 @@ renderProducts = (items) => {
     let productsComponent = document.getElementsByClassName('products')[0];
 
     Utils.pushComponent(productsComponent, ViewProducts.getProducts(items));
+
+    let gotop = document.getElementById("gotop");
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
+            gotop.style.display = "block";
+        } else {
+            gotop.style.display = "none";
+        }
+    }
+
+    gotop.addEventListener('click', () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
 
     let allBtnAddProduct = Array.prototype.slice.call(document.getElementsByClassName('add-product'));
 
