@@ -64,16 +64,17 @@ button:focus {
     align-content: flex-end;
 }
 
-.add-product,
-.go-cart,
-.payment button,
-#gotop {
+.btn {
     border: none;
     border-radius: 5px;
     padding: 10px;
     background-color: #0077B6;
     color: white;
     margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #076091;
 }
 
 #products-in-cart-detail {

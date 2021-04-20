@@ -45,23 +45,51 @@ function goMainView() {
     loadProducts();
 }
 
-async function onDeleteItem(event) {
-    let id = event.srcElement.id.replace('delete-', ''),
+function onChangeQuantity(event, isIncrement) {
+    let typeBtn = isIncrement ? 'btn-increment-' : 'btn-decrement-',
+        id = event.srcElement.id.replace(typeBtn, ''),
+        quantity = document.getElementById(`quantity-${id}`),
+        tdValue = document.getElementById(`value-${id}`),
+        newQuantity = parseInt(quantity.textContent);
+
+    if (isIncrement) {
+        quantity.textContent = ++newQuantity;
+    }
+    else {
+        quantity.textContent = --newQuantity;
+
+        if (newQuantity <= 0) {
+            onDeleteItem(event, typeBtn);
+        }
+    }
+
+    cart.forEach(o => {
+        if (o.id == id) {
+            let valueR$ = (o.quantity * o.value).toFixed(2);
+
+            o.quantity = newQuantity;
+
+            tdValue.textContent = `R$ ${parseFloat(valueR$)}`;
+        }
+    });
+
+    Utils.updateTotalValue(cart);
+}
+
+function onDeleteItem(event, complementId) {
+    let id = event.srcElement.id.replace(complementId, ''),
         tbody = document.getElementById('tbody-products'),
-        spnTotal = document.getElementById('spn-total'),
-        newTotal = 0;
+        tr = document.getElementById(`tr-${id}`);
 
     cart = cart.filter(o => o.id != id);
 
-    await tbody.removeChild(event.srcElement.parentElement.parentElement);
+    tbody.removeChild(tr);
 
     asideProductsCartDetails.innerHTML = ViewOrder.getResumeOrder(cart);
 
     addItensCart();
 
-    cart.forEach(o => newTotal += o.quantity * o.value);
-
-    spnTotal.textContent = `R$ ${newTotal}`;
+    Utils.updateTotalValue(cart);
 }
 
 addItensCart = () => {
@@ -148,11 +176,21 @@ renderProducts = (items) => {
 
                     let btnContinueBuying = document.getElementById('continue-buying'),
                         btnFinish = document.getElementById('finish'),
-                        allBtnDelete = Array.prototype.slice.call(document.getElementsByClassName('delete'));
+                        allBtnDelete = Array.prototype.slice.call(document.getElementsByClassName('delete')),
+                        allBtnIncrement = Array.prototype.slice.call(document.getElementsByClassName('btn-increment')),
+                        allBtnDecrement = Array.prototype.slice.call(document.getElementsByClassName('btn-decrement'));
 
                     allBtnDelete.forEach(o => {
-                        o.addEventListener('click', onDeleteItem);
+                        o.addEventListener('click', (event) => onDeleteItem(event, 'delete-'));
                     });
+
+                    allBtnIncrement.forEach(o => {
+                        o.addEventListener('click', (event) => onChangeQuantity(event, true));
+                    })
+
+                    allBtnDecrement.forEach(o => {
+                        o.addEventListener('click', (event) => onChangeQuantity(event, false));
+                    })
 
                     btnContinueBuying.addEventListener('click', goMainView);
 

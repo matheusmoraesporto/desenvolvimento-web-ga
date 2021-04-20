@@ -22,7 +22,7 @@ class ViewOrder {
                 </div>`;
         });
 
-        content += '<button id="go-cart" class="cursor-pointer go-cart">Ir para o carrinho</button>';
+        content += '<button id="go-cart" class="cursor-pointer go-cart btn">Ir para o carrinho</button>';
 
         return content;
     }
@@ -46,7 +46,7 @@ class ViewOrder {
         items.forEach(o => {
             let valueXQuantity = (o.value * o.quantity).toFixed(2);
             content += `
-                <tr>
+                <tr id="tr-${o.id}">
                     <td>
                         <div class="flex-row table-product filter-drop-shadow">
                             <img class="img-order" src="${o.img}" alt="${o.description}">
@@ -61,9 +61,9 @@ class ViewOrder {
                     <td class="font-bold">R$ ${o.value}</td>
                     <td class="font-bold">
                         <div class="flex-row justify-content-center">
-                            <button class="cursor-pointer bkg-light-blue">-</button>
+                            <button id="btn-decrement-${o.id}" class="cursor-pointer bkg-light-blue btn-decrement">-</button>
                             <p id="quantity-${o.id}" class="bkg-light-blue">${o.quantity}</p>
-                            <button class="cursor-pointer bkg-light-blue">+</button>
+                            <button id="btn-increment-${o.id}" class="cursor-pointer bkg-light-blue btn-increment">+</button>
                         </div>
                     </td>
                     <td id="value-${o.id}" class="font-bold">R$ ${valueXQuantity}</td>
@@ -85,8 +85,8 @@ class ViewOrder {
                     <div></div>
                     <div></div>
                     <div>
-                        <button type="submit" id="continue-buying" class="cursor-pointer">Continuar comprando</button>
-                        <button type="submit" id="finish" class="cursor-pointer">Finalizar a compra</button>
+                        <button type="submit" id="continue-buying" class="cursor-pointer btn">Continuar comprando</button>
+                        <button type="submit" id="finish" class="cursor-pointer btn">Finalizar a compra</button>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ class ViewProducts {
                 <p id="value-${product.value}" class="products-value">R$ ${product.value}<p/>
                 
                 <div class="cart-button">
-                    <button id="btn-add-product-${product.id}" class="cursor-pointer add-product">Adicionar ao carrinho</button>
+                    <button id="btn-add-product-${product.id}" class="cursor-pointer add-product btn">Adicionar ao carrinho</button>
                 </div>
                 
             </div>`;

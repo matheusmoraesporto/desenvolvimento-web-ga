@@ -16,7 +16,7 @@ class ViewOrderFinish {
                 
                 <div class="payment">
                     <p>O boleto de cobrança foi enviado para o seu e-mail.</p>
-                    <button type="submit" id="back" class="cursor-pointer">Voltar ao início <img src="../assets/Icons/log-out.png" alt="Voltar" class=""></button>
+                    <button type="submit" id="back" class="cursor-pointer btn">Voltar ao início <img src="../assets/Icons/log-out.png" alt="Voltar" class=""></button>
                 </div>
             </div>`;
     }
