@@ -73,7 +73,9 @@ function onChangeQuantity(event, isIncrement) {
         }
     });
 
-    Utils.updateTotalValue(cart);
+    if (cart.length > 0) {
+        Utils.updateTotalValue(cart);
+    }
 }
 
 function onDeleteItem(event, complementId) {
@@ -90,6 +92,14 @@ function onDeleteItem(event, complementId) {
     addItensCart();
 
     Utils.updateTotalValue(cart);
+
+    if (cart.length <= 0) {
+        let contentTable = document.getElementsByClassName('content-table')[0];
+
+        Utils.pushComponent(contentTable, ViewOrder.getComponentEmptyCart());
+
+        defineContinueBuying();
+    }
 }
 
 addItensCart = () => {
@@ -174,11 +184,12 @@ renderProducts = (items) => {
 
                     asideProductsCart.hidden = true;
 
-                    let btnContinueBuying = document.getElementById('continue-buying'),
-                        btnFinish = document.getElementById('finish'),
+                    let btnFinish = document.getElementById('finish'),
                         allBtnDelete = Array.prototype.slice.call(document.getElementsByClassName('delete')),
                         allBtnIncrement = Array.prototype.slice.call(document.getElementsByClassName('btn-increment')),
                         allBtnDecrement = Array.prototype.slice.call(document.getElementsByClassName('btn-decrement'));
+
+                    defineContinueBuying();
 
                     allBtnDelete.forEach(o => {
                         o.addEventListener('click', (event) => onDeleteItem(event, 'delete-'));
@@ -191,8 +202,6 @@ renderProducts = (items) => {
                     allBtnDecrement.forEach(o => {
                         o.addEventListener('click', (event) => onChangeQuantity(event, false));
                     })
-
-                    btnContinueBuying.addEventListener('click', goMainView);
 
                     btnFinish.addEventListener('click', () => {
                         // Implementar as validações do formulário
@@ -241,6 +250,11 @@ defineFilter = (items, checked, id) => {
     }
 
     return items;
+}
+
+defineContinueBuying = () => {
+    let btnContinueBuying = document.getElementById('continue-buying');
+    btnContinueBuying.addEventListener('click', goMainView);
 }
 
 loadProducts();
