@@ -206,7 +206,7 @@ renderProducts = (items) => {
                     btnFinish.addEventListener('click', () => {
                         // Implementar as validações do formulário
 
-                        let contentFinish = ViewOrderFinish.getOrderFinish();
+                        let contentFinish = ViewOrderFinish.getOrderFinish(cart);
 
                         cart = [];
 

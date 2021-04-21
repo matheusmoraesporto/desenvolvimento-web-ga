@@ -78,24 +78,99 @@ class ViewOrder {
                 </table>
 
                 <div class="total">
-                    Total: <span id="spn-total">R$ ${total}</span>
+                    Total: <span id="spn-total">R$ ${total.toFixed(2)}</span>
                 </div>
 
                 <div class="flex-row forms">
-                    <div class="forms-detail">
+                    <div class="forms-detail form-personal">
                         <div class="flex-row forms-detail-head">
                             <img src="../assets/Icons/personal.png" class="icon-20">
                             <h4>Informações cadastrais</h4>
                         </div>
 
+                        <div>
+                            <label for="email">E-mail:</label>
+                            <input class="input-100" type="text" name="email" id="email" placeholder="Exemplo: jmgames@gmail.com.br">
+                        </div>
+
+                        <div>
+                            <label for="name">Nome completo:</label>
+                            <input class="input-100" type="text" name="name" id="name">
+                        </div>
+
+                        <div class="flex-row">
+                            <div class="input-50">
+                                <label for="cpf">CPF:</label>
+                                <input class="input-100" type="text" name="cpf" id="cpf">
+                            </div>
+
+                            <div class="input-50">
+                                <label for="bith-date">Data de nascimento:</label>
+                                <input class="input-100" type="date" name="birth-date" id="birth-date">
+                            </div>
+                        </div>
+
+                        <div class="flex-row">
+                            <div class="input-50">
+                                <label for="cell">Celular:</label>
+                                <input class="input-100" type="text" name="cell" id="cell" placeholder="(xx) xxxx-xxxx">
+                            </div>
+
+                            <div class="input-50">
+                                <label for="telephone">Telefone:</label>
+                                <input class="input-100" type="text" name="telephone" id="telephone" placeholder="(xx) xxxx-xxxx">
+                            </div>
+                        </div>
                     </div>
-                    <div class="forms-detail">
+
+                    <div class="forms-detail form-address">
                         <div class="flex-row forms-detail-head">
                             <img src="../assets/Icons/location.png" class="icon-20">
                             <h4>Entrega</h4>
                         </div>
+
+                        <div class="flex-row">
+                            <div class="input-50">
+                                <label for="cep">CEP:</label>
+                                <input class="input-100" type="text" name="cep" id="cep">
+                            </div>
+
+                            <div class="input-50">
+                                <label for="complement">Complemento:</label>
+                                <input class="input-100" type="text" name="complement" id="complement">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="address">Endereço:</label>
+                            <input class="input-100" type="text" name="address" id="address">
+                        </div>
+
+                        <div class="flex-row">
+                            <div class="input-50">
+                                <label for="number">Número:</label>
+                                <input class="input-100" type="number" name="number" id="number">
+                            </div>
+
+                            <div class="input-50">
+                                <label for="reference">Referência:</label>
+                                <input class="input-100" type="text" name="reference" id="reference">
+                            </div>
+                        </div>
+
+                        <div class="flex-row">
+                            <div class="input-50">
+                                <label for="state">Estado:</label>
+                                <input class="input-100" type="text" name="state" id="state">
+                            </div>
+
+                            <div class="input-50">
+                                <label for="city">Cidade:</label>
+                                <input class="input-100" type="text" name="city" id="city">
+                            </div>
+                        </div>
                     </div>
-                    <div class="forms-detail">
+                    <div class="forms-detail form-payment">
                         <div class="flex-row forms-detail-head">
                             <img src="../assets/Icons/cash.png" class="icon-20">
                             <h4>Pagamento</h4>
@@ -109,7 +184,7 @@ class ViewOrder {
 
                             <div class="payment-bank-slip-detail flex-row">
                                 <img id="protected" src="../assets/logotypes/protected.png">
-                                <p>Total: <span>R$ ${total}</span></p>
+                                <p>Total: <span>R$ ${total.toFixed(2)}</span></p>
                             </div>
 
                             <p>Compensação em até 2 dias úteis</p>
@@ -121,9 +196,6 @@ class ViewOrder {
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="forms">
             </div>`;
 
         return content;

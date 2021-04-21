@@ -1,12 +1,12 @@
 class ViewOrderFinish {
-    static getOrderFinish() {
+    static getOrderFinish(cart) {
         return `
             <div class="card-conclusion">
                 <div class="product-resume">
                     <div class="resume">
                         <h3>Resumo do pedido</h3>
                         <p>Número do pedido: <span>${parseInt(Math.random() * 100000)}</span></p>
-                        <p>Valor do pedido:<span>R$ ESTÁ FIXO NEGÃO</span></p>
+                        <p>Valor do pedido:<span>R$ ${Utils.updateTotalValue(cart)}</span></p>
                     </div>
                     <div class="conclusion">
                         <h3>Pedido conlcluído com sucesso!</h3>
