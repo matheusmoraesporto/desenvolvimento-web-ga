@@ -96,6 +96,12 @@ td .bkg-light-blue {
     width: 50%;
 }
 
+.input-form {
+    padding: 10px;
+    display: block;
+    width: -webkit-fill-available;
+}
+
 .form-payment-bank-slip {
     margin: 20px 0;
     border: 1px solid;

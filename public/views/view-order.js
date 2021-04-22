@@ -90,35 +90,35 @@ class ViewOrder {
 
                         <div>
                             <label for="email">E-mail:</label>
-                            <input class="input-100" type="text" name="email" id="email" placeholder="Exemplo: jmgames@gmail.com.br">
+                            <input class="input-form" type="text" name="email" id="email" placeholder="Exemplo: jmgames@gmail.com.br">
                         </div>
 
                         <div>
                             <label for="name">Nome completo:</label>
-                            <input class="input-100" type="text" name="name" id="name">
+                            <input class="input-form" type="text" name="name" id="name">
                         </div>
 
                         <div class="flex-row">
                             <div class="input-50">
                                 <label for="cpf">CPF:</label>
-                                <input class="input-100" type="text" name="cpf" id="cpf">
+                                <input class="input-form" type="text" name="cpf" id="cpf">
                             </div>
 
                             <div class="input-50">
                                 <label for="bith-date">Data de nascimento:</label>
-                                <input class="input-100" type="date" name="birth-date" id="birth-date">
+                                <input class="input-form" type="date" name="birth-date" id="birth-date">
                             </div>
                         </div>
 
                         <div class="flex-row">
                             <div class="input-50">
                                 <label for="cell">Celular:</label>
-                                <input class="input-100" type="text" name="cell" id="cell" placeholder="(xx) xxxx-xxxx">
+                                <input class="input-form" type="text" name="cell" id="cell" placeholder="(xx) xxxx-xxxx">
                             </div>
 
                             <div class="input-50">
                                 <label for="telephone">Telefone:</label>
-                                <input class="input-100" type="text" name="telephone" id="telephone" placeholder="(xx) xxxx-xxxx">
+                                <input class="input-form" type="text" name="telephone" id="telephone" placeholder="(xx) xxxx-xxxx">
                             </div>
                         </div>
                     </div>
@@ -132,41 +132,41 @@ class ViewOrder {
                         <div class="flex-row">
                             <div class="input-50">
                                 <label for="cep">CEP:</label>
-                                <input class="input-100" type="text" name="cep" id="cep">
+                                <input class="input-form" type="text" name="cep" id="cep">
                             </div>
 
                             <div class="input-50">
                                 <label for="complement">Complemento:</label>
-                                <input class="input-100" type="text" name="complement" id="complement">
+                                <input class="input-form" type="text" name="complement" id="complement">
                             </div>
                         </div>
 
                         <div>
                             <label for="address">Endereço:</label>
-                            <input class="input-100" type="text" name="address" id="address">
+                            <input class="input-form" type="text" name="address" id="address">
                         </div>
 
                         <div class="flex-row">
                             <div class="input-50">
                                 <label for="number">Número:</label>
-                                <input class="input-100" type="number" name="number" id="number">
+                                <input class="input-form" type="number" name="number" id="number">
                             </div>
 
                             <div class="input-50">
                                 <label for="reference">Referência:</label>
-                                <input class="input-100" type="text" name="reference" id="reference">
+                                <input class="input-form" type="text" name="reference" id="reference">
                             </div>
                         </div>
 
                         <div class="flex-row">
                             <div class="input-50">
                                 <label for="state">Estado:</label>
-                                <input class="input-100" type="text" name="state" id="state">
+                                <input class="input-form" type="text" name="state" id="state">
                             </div>
 
                             <div class="input-50">
                                 <label for="city">Cidade:</label>
-                                <input class="input-100" type="text" name="city" id="city">
+                                <input class="input-form" type="text" name="city" id="city">
                             </div>
                         </div>
                     </div>
