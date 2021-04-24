@@ -83,10 +83,6 @@ input[type=checkbox]:checked:after {
     left: 4px;
 }
 
-span {
-    margin: 0px 15px;
-}
-
 #gotop {
     display: none;
     position: fixed;

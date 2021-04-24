@@ -88,32 +88,32 @@ class ViewOrder {
                             <h4>Informações cadastrais</h4>
                         </div>
 
-                        <div>
+                        <div class="div-input-form">
                             <label for="email">E-mail:</label>
                             <input class="input-form" type="text" name="email" id="email" placeholder="Exemplo: jmgames@gmail.com.br">
                         </div>
 
-                        <div>
+                        <div class="div-input-form">
                             <label for="name">Nome completo:</label>
                             <input class="input-form" type="text" name="name" id="name">
                         </div>
 
-                        <div class="flex-row">
+                        <div class="flex-row div-input-form">
                             <div class="input-50">
                                 <label for="cpf">CPF:</label>
-                                <input class="input-form" type="text" name="cpf" id="cpf">
+                                <input class="input-form input-form-margin-right" type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx">
                             </div>
 
                             <div class="input-50">
-                                <label for="bith-date">Data de nascimento:</label>
-                                <input class="input-form" type="date" name="birth-date" id="birth-date">
+                                <label for="birthdate">Data de nascimento:</label>
+                                <input class="input-form" type="date" name="birthdate" id="birthdate">
                             </div>
                         </div>
 
-                        <div class="flex-row">
+                        <div class="flex-row div-input-form">
                             <div class="input-50">
                                 <label for="cell">Celular:</label>
-                                <input class="input-form" type="text" name="cell" id="cell" placeholder="(xx) xxxx-xxxx">
+                                <input class="input-form input-form-margin-right" type="text" name="cell" id="cell" placeholder="(xx) xxxx-xxxx">
                             </div>
 
                             <div class="input-50">
@@ -130,26 +130,26 @@ class ViewOrder {
                         </div>
 
                         <div class="flex-row">
-                            <div class="input-50">
+                            <div class="input-50 div-input-form">
                                 <label for="cep">CEP:</label>
-                                <input class="input-form" type="text" name="cep" id="cep">
+                                <input class="input-form input-form-margin-right" type="text" name="cep" id="cep" placeholder="xxxxx-xxx">
                             </div>
 
-                            <div class="input-50">
+                            <div class="input-50 div-input-form">
                                 <label for="complement">Complemento:</label>
                                 <input class="input-form" type="text" name="complement" id="complement">
                             </div>
                         </div>
 
-                        <div>
+                        <div class="div-input-form">
                             <label for="address">Endereço:</label>
                             <input class="input-form" type="text" name="address" id="address">
                         </div>
 
-                        <div class="flex-row">
+                        <div class="flex-row div-input-form">
                             <div class="input-50">
                                 <label for="number">Número:</label>
-                                <input class="input-form" type="number" name="number" id="number">
+                                <input class="input-form input-form-margin-right" type="number" name="number" id="number" min="1">
                             </div>
 
                             <div class="input-50">
@@ -158,13 +158,42 @@ class ViewOrder {
                             </div>
                         </div>
 
-                        <div class="flex-row">
-                            <div class="input-50">
-                                <label for="state">Estado:</label>
-                                <input class="input-form" type="text" name="state" id="state">
+                        <div class="flex-row div-input-form">
+                            <div class="select-component">
+                                <legend>Estado:</legend>
+                                <select class="input-form input-form-margin-right">
+                                    <option>--</option>
+                                    <option>AC</option>
+                                    <option>AL</option>
+                                    <option>AM</option>
+                                    <option>AP</option>
+                                    <option>BA</option>
+                                    <option>CE</option>
+                                    <option>DF</option>
+                                    <option>ES</option>
+                                    <option>GO</option>
+                                    <option>MA</option>
+                                    <option>MG</option>
+                                    <option>MS</option>
+                                    <option>MT</option>
+                                    <option>PA</option>
+                                    <option>PB</option>
+                                    <option>PE</option>
+                                    <option>PI</option>
+                                    <option>PR</option>
+                                    <option>RJ</option>
+                                    <option>RN</option>
+                                    <option>RO</option>
+                                    <option>RR</option>
+                                    <option>RS</option>
+                                    <option>SC</option>
+                                    <option>SE</option>
+                                    <option>SP</option>
+                                    <option>TO</option>
+                                </select>
                             </div>
 
-                            <div class="input-50">
+                            <div class="input-70">
                                 <label for="city">Cidade:</label>
                                 <input class="input-form" type="text" name="city" id="city">
                             </div>
@@ -184,7 +213,7 @@ class ViewOrder {
 
                             <div class="payment-bank-slip-detail flex-row">
                                 <img id="protected" src="../assets/logotypes/protected.png">
-                                <p>Total: <span>R$ ${total.toFixed(2)}</span></p>
+                                <p>Total: <span id="spn-payment-bank-slip-detail">R$ ${total.toFixed(2)}</span></p>
                             </div>
 
                             <p>Compensação em até 2 dias úteis</p>

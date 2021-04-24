@@ -11,7 +11,11 @@ let inputSearch = document.getElementById('search'),
     products = [],
     cart = [],
     filtersType = [],
-    filtersBranch = [];
+    filtersBranch = [],
+    formData = {
+        personal: {},
+        address: {}
+    };
 
 // Definição das funções
 loadProducts = () => {
@@ -43,6 +47,32 @@ function goMainView() {
     });
 
     loadProducts();
+}
+
+function maskPhone(value) {
+    let r = value.replace(/\D/g, "");
+
+    r = r.replace(/^0/, "");
+
+
+    if (r.length > 11) {
+        r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    }
+    else if (r.length > 7) {
+        r = r.replace(/^(\d\d)(\d{5})(\d{0,4}).*/, "($1) $2-$3");
+    }
+    else if (r.length > 2) {
+        r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    }
+    else if (value.trim() !== "") {
+        r = r.replace(/^(\d*)/, "($1");
+    }
+
+    return r;
+}
+
+function setData(data, property, newValue) {
+    formData[data][property] = newValue;
 }
 
 function onChangeQuantity(event, isIncrement) {
@@ -187,7 +217,73 @@ renderProducts = (items) => {
                     let btnFinish = document.getElementById('finish'),
                         allBtnDelete = Array.prototype.slice.call(document.getElementsByClassName('delete')),
                         allBtnIncrement = Array.prototype.slice.call(document.getElementsByClassName('btn-increment')),
-                        allBtnDecrement = Array.prototype.slice.call(document.getElementsByClassName('btn-decrement'));
+                        allBtnDecrement = Array.prototype.slice.call(document.getElementsByClassName('btn-decrement')),
+                        inputCpf = document.getElementById('cpf'),
+                        inputCep = document.getElementById('cep'),
+                        inputCell = document.getElementById('cell'),
+                        inputTelephone = document.getElementById('telephone'),
+                        fields = Array.prototype.slice.call(document.getElementsByClassName('input-form'));
+
+                    fields.forEach(o => {
+                        o.addEventListener('change', () => {
+                            let personalFields = [
+                                'email',
+                                'name',
+                                'cpf',
+                                'birthdate',
+                                'cell',
+                                'telephone',
+                            ];
+
+                            setData(personalFields.includes(o.name) ? 'personal' : 'address', o.name, o.value);
+                        });
+                    });
+
+                    inputCpf.addEventListener('keyup', () => {
+                        if (inputCpf.value) {
+                            // Obtém somente os números, para obter a quantidade máxima que pode ser informada
+                            inputCpf.value =
+                                inputCpf.value
+                                    .replace(/[^\d]+/g, '')
+                                    .slice(0, 11);
+
+                            if (inputCpf.value) {
+                                // então aplica a máscara de cpf
+                                inputCpf.value =
+                                    inputCpf.value
+                                        .match(/.{1,3}/g)
+                                        .join(".")
+                                        .replace(/\.(?=[^.]*$)/, "-");
+                            }
+                        }
+                    });
+
+                    inputCep.addEventListener('keyup', () => {
+                        if (inputCep.value) {
+                            // Obtém somente os números, para obter a quantidade máxima que pode ser informada
+                            inputCep.value =
+                                inputCep.value
+                                    .replace(/[^\d]+/g, '')
+                                    .slice(0, 8);
+
+                            if (inputCep.value) {
+                                // então aplica a máscara de cpf
+                                inputCep.value = inputCep.value.match(/.{1,5}/g).join("-");
+                            }
+                        }
+                    });
+
+                    inputCell.addEventListener('keyup', () => {
+                        if (inputCell.value) {
+                            inputCell.value = maskPhone(inputCell.value);
+                        }
+                    });
+
+                    inputTelephone.addEventListener('keyup', () => {
+                        if (inputTelephone.value) {
+                            inputTelephone.value = maskPhone(inputTelephone.value);
+                        }
+                    });
 
                     defineContinueBuying();
 
@@ -204,19 +300,38 @@ renderProducts = (items) => {
                     })
 
                     btnFinish.addEventListener('click', () => {
-                        // Implementar as validações do formulário
+                        let req = new Request('http://localhost:3000/finish', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData)
+                        });
+                        fetch(req)
+                            .then(response => {
+                                return response.json();
+                            })
+                            .then(response => {
+                                if (response.possuiErros) {
+                                    alert(response.msg);
+                                    return;
+                                }
 
-                        let contentFinish = ViewOrderFinish.getOrderFinish(cart);
+                                let contentFinish = ViewOrderFinish.getOrderFinish(cart);
 
-                        cart = [];
+                                cart = [];
 
-                        addItensCart();
+                                addItensCart();
 
-                        Utils.pushComponent(divMain, contentFinish);
+                                Utils.pushComponent(divMain, contentFinish);
 
-                        let btnBack = document.getElementById('back');
+                                let btnBack = document.getElementById('back');
 
-                        btnBack.addEventListener('click', goMainView);
+                                btnBack.addEventListener('click', goMainView);
+                            })
+                            .catch(responseError => {
+                                alert(responseError);
+                            });
                     });
                 });
             }
