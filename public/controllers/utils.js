@@ -11,9 +11,11 @@ class Utils {
         cart.forEach(o => newTotal += o.quantity * o.value);
 
         let newTotalToFixed = parseFloat(newTotal.toFixed(2));
-        
+
         spnTotal.textContent = `R$ ${newTotalToFixed}`;
-        
+
         spnPayment.textContent = `R$ ${newTotalToFixed}`;
+
+        return newTotal;
     }
 }

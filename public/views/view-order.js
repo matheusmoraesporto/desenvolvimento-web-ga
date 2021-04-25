@@ -161,7 +161,7 @@ class ViewOrder {
                         <div class="flex-row div-input-form">
                             <div class="select-component">
                                 <legend>Estado:</legend>
-                                <select class="input-form input-form-margin-right">
+                                <select class="input-form input-form-margin-right" name="state">
                                     <option>--</option>
                                     <option>AC</option>
                                     <option>AL</option>
@@ -220,7 +220,7 @@ class ViewOrder {
                         </div>
 
                         <div>
-                            <button type="submit" id="continue-buying" class="cursor-pointer btn">Continuar comprando</button>
+                            <button type="submit" id="continue-buying" class="continue-buying cursor-pointer btn">Continuar comprando</button>
                             <button type="submit" id="finish" class="cursor-pointer btn">Finalizar a compra</button>
                         </div>
                     </div>

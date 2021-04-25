@@ -51,6 +51,20 @@ function goMainView() {
     loadProducts();
 }
 
+function addMessage(msg, backgroundColor) {
+    let msgComponent = document.getElementsByClassName('messages')[0];
+
+    msgComponent.hidden = false;
+
+    msgComponent.style.backgroundColor = backgroundColor;
+
+    msgComponent.textContent = msg;
+
+    setTimeout(() => {
+        msgComponent.hidden = true;
+    }, 5000);
+}
+
 function maskPhone(value) {
     let r = value.replace(/\D/g, "");
 
@@ -128,6 +142,10 @@ function onDeleteItem(event, complementId) {
 
         defineContinueBuying();
     }
+
+    let removedItem = products.filter(o => o.id == id)[0];
+
+    addMessage(`O item ${removedItem.description} foi removido do carrinho.`, 'orange');
 }
 
 addItensCart = () => {
@@ -314,7 +332,7 @@ renderProducts = (items) => {
                             })
                             .then(response => {
                                 if (response.possuiErros) {
-                                    alert(response.msg);
+                                    addMessage(response.msg, 'red');
                                     return;
                                 }
 
@@ -326,9 +344,18 @@ renderProducts = (items) => {
 
                                 Utils.pushComponent(divMain, contentFinish);
 
-                                let btnBack = document.getElementById('back');
+                                let btnBack = document.getElementById('back'),
+                                    btnCopy = document.getElementById('btn-copy');
 
                                 btnBack.addEventListener('click', goMainView);
+                                
+                                btnCopy.addEventListener('click', () => {
+                                    let inputBoleto = document.getElementById('input-boleto');
+
+                                    inputBoleto.select();
+
+                                    document.execCommand('copy');
+                                })
                             })
                             .catch(responseError => {
                                 alert(responseError);
@@ -336,6 +363,8 @@ renderProducts = (items) => {
                     });
                 });
             }
+
+            addMessage(`O item ${newProduct.description} foi adicionado ao carrinho.`, 'green');
         });
     });
 };
