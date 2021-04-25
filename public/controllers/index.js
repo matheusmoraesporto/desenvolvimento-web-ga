@@ -58,11 +58,22 @@ function addMessage(msg, backgroundColor, time) {
 
     msgComponent.style.backgroundColor = backgroundColor;
 
-    msgComponent.textContent = msg;
+    msgComponent.innerHTML = `<p>${msg}</p><img id="img-close" src="../assets/Icons/close.png" class="icon-25 cursor-pointer">`;
+
+    let close = document.getElementById('img-close');
+
+    close.addEventListener('click', () => {
+        killMessage(msgComponent);
+    });
 
     setTimeout(() => {
-        msgComponent.hidden = true;
+        killMessage(msgComponent);
     }, time);
+}
+
+function killMessage(msgComponent) {
+    Array.prototype.slice.call(msgComponent.children).forEach(o => o.hidden = true);
+    msgComponent.style.backgroundColor = null;
 }
 
 function maskPhone(value) {
@@ -178,7 +189,7 @@ renderProducts = (items) => {
 
     let gotop = document.getElementById("gotop");
 
-    window.onscroll = function() { scrollFunction() };
+    window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
         if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
@@ -263,16 +274,16 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCpf.value =
                                 inputCpf.value
-                                .replace(/[^\d]+/g, '')
-                                .slice(0, 11);
+                                    .replace(/[^\d]+/g, '')
+                                    .slice(0, 11);
 
                             if (inputCpf.value) {
                                 // então aplica a máscara de cpf
                                 inputCpf.value =
                                     inputCpf.value
-                                    .match(/.{1,3}/g)
-                                    .join(".")
-                                    .replace(/\.(?=[^.]*$)/, "-");
+                                        .match(/.{1,3}/g)
+                                        .join(".")
+                                        .replace(/\.(?=[^.]*$)/, "-");
                             }
                         }
                     });
@@ -282,8 +293,8 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCep.value =
                                 inputCep.value
-                                .replace(/[^\d]+/g, '')
-                                .slice(0, 8);
+                                    .replace(/[^\d]+/g, '')
+                                    .slice(0, 8);
 
                             if (inputCep.value) {
                                 // então aplica a máscara de cpf
