@@ -12,22 +12,25 @@ class ViewOrderFinish {
                     <div class="resume">
                         <h3>Resumo do pedido</h3>
                         <p>Número do pedido: <span>${parseInt(Math.random() * 100000)}</span></p>
-                        <p>Valor do pedido:<span>R$ ${Utils.updateTotalValue(cart)}</span></p>
+                        <p>Valor do pedido: <span>R$ ${Utils.updateTotalValue(cart)}</span></p>
                         
                         <div>
                             <input id="input-boleto" type="text" readonly value="${fakeBoleto}">
-                            <button id="btn-copy" class="btn">Copiar o código de barras do boleto<button>
+                            <button id="btn-copy" class="btn cursor-pointer">
+                                Copiar o código de barras do boleto
+                                <img src="../assets/Icons/copy.png" alt="Copiar" class="icon-20">
+                            <button>
                         </div>
                     </div>
                     <div class="conclusion">
                         <h3>Pedido conlcluído com sucesso!</h3>
-                        <img src="../assets/Icons/ok.png" alt="Sucesso" class="">
+                        <img src="../assets/Icons/ok.png" alt="Sucesso">
                     </div>
                 </div>
                 
                 <div class="payment">
                     <p>O boleto de cobrança foi enviado para o seu e-mail.</p>
-                    <button type="submit" id="back" class="cursor-pointer btn">Voltar ao início <img src="../assets/Icons/log-out.png" alt="Voltar" class=""></button>
+                    <button type="submit" id="back" class="cursor-pointer btn">Voltar ao início <img src="../assets/Icons/log-out.png" alt="Voltar"></button>
                 </div>
             </div>`;
     }

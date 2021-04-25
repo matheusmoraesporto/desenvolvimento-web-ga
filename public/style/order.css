@@ -166,4 +166,7 @@ td .bkg-light-blue {
     background-color: #ffffff;
     color: #0077B6;
     border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
 }

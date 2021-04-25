@@ -220,7 +220,7 @@ class ViewOrder {
                         </div>
 
                         <div>
-                            <button type="submit" id="continue-buying" class="continue-buying cursor-pointer btn">Continuar comprando</button>
+                            <button type="submit" id="continue-buying" class="continue-buying cursor-pointer">Continuar comprando</button>
                             <button type="submit" id="finish" class="cursor-pointer btn">Finalizar a compra</button>
                         </div>
                     </div>

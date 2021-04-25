@@ -71,6 +71,7 @@ button:focus {
     background-color: #0077B6;
     color: white;
     margin-top: 10px;
+    transition: all 1s;
 }
 
 .btn:hover {

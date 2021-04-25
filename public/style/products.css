@@ -6,6 +6,8 @@
     background-color: white;
     border-radius: 5px;
     margin: 15px 15px 10px 20px;
+
+    transition: all 3s;
 }
 
 .products-value,
