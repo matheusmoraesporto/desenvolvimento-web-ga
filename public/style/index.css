@@ -167,6 +167,5 @@ button:focus {
     color: #ffffff;
     z-index: 99;
     padding: 20px;
-    font-weight: bold;
     border-radius: 5px;
 }

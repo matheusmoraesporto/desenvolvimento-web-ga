@@ -167,3 +167,9 @@ td .bkg-light-blue {
     color: #0077B6;
     border: 1px solid;
 }
+
+input:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #EAF5F8 inset;
+    -webkit-text-fill-color: #262626 !important;
+}
