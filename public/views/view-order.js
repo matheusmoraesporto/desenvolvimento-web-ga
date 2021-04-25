@@ -161,7 +161,7 @@ class ViewOrder {
                         <div class="flex-row div-input-form">
                             <div class="select-component">
                                 <legend>Estado:</legend>
-                                <select class="input-form input-form-margin-right">
+                                <select class="input-form input-form-margin-right" name="state">
                                     <option>--</option>
                                     <option>AC</option>
                                     <option>AL</option>

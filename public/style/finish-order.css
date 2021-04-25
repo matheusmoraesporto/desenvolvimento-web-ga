@@ -4,7 +4,7 @@
     display: flex;
     border-radius: 5px;
     flex-direction: column;
-    background-color: white;
+    background: linear-gradient(0deg, rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%);
     padding: 50px 25px 50px 25px;
     filter: drop-shadow(0 0 4px #C9C9C9);
 }
