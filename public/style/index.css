@@ -158,3 +158,15 @@ button:focus {
 .justify-content-center {
     justify-content: center;
 }
+
+.messages {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    /* background-color: red; */
+    color: #ffffff;
+    z-index: 99;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
