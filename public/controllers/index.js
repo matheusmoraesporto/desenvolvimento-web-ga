@@ -6,6 +6,7 @@ let inputSearch = document.getElementById('search'),
     pEmptyCart = document.getElementById('empty-cart'),
     filtersTypeProduct = Array.prototype.slice.call(document.getElementsByClassName('filters-type-product')),
     divMain = document.getElementsByClassName('main')[0],
+    divSlide = document.getElementsByClassName('slideshow-container')[0],
     logo = document.getElementsByClassName('logo')[0],
     event = new Event('changecart'),
     products = [],
@@ -36,7 +37,8 @@ loadProducts = () => {
 
 function goMainView() {
     Utils.pushComponent(divMain, ViewProducts.getFilters());
-
+    Utils.pushComponent(divSlide, ViewProducts.getSlider());
+    currentSlide(1);
     asideProductsCart.hidden = true;
 
     // necessário, pois quando recriava a tela não estava adicionando o evento de click dos filtros
@@ -57,14 +59,11 @@ function maskPhone(value) {
 
     if (r.length > 11) {
         r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
-    }
-    else if (r.length > 7) {
+    } else if (r.length > 7) {
         r = r.replace(/^(\d\d)(\d{5})(\d{0,4}).*/, "($1) $2-$3");
-    }
-    else if (r.length > 2) {
+    } else if (r.length > 2) {
         r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
-    }
-    else if (value.trim() !== "") {
+    } else if (value.trim() !== "") {
         r = r.replace(/^(\d*)/, "($1");
     }
 
@@ -84,8 +83,7 @@ function onChangeQuantity(event, isIncrement) {
 
     if (isIncrement) {
         quantity.textContent = ++newQuantity;
-    }
-    else {
+    } else {
         quantity.textContent = --newQuantity;
 
         if (newQuantity <= 0) {
@@ -162,7 +160,7 @@ renderProducts = (items) => {
 
     let gotop = document.getElementById("gotop");
 
-    window.onscroll = function () { scrollFunction() };
+    window.onscroll = function() { scrollFunction() };
 
     function scrollFunction() {
         if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
@@ -210,6 +208,9 @@ renderProducts = (items) => {
 
                 // Cria a view com os detalhes da compra
                 btnGoCart.addEventListener('click', () => {
+                    let slider = document.getElementsByClassName('slideshow-container')[0];
+                    slider.innerHTML = '';
+
                     Utils.pushComponent(divMain, ViewOrder.getOrder(cart));
 
                     asideProductsCart.hidden = true;
@@ -244,16 +245,16 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCpf.value =
                                 inputCpf.value
-                                    .replace(/[^\d]+/g, '')
-                                    .slice(0, 11);
+                                .replace(/[^\d]+/g, '')
+                                .slice(0, 11);
 
                             if (inputCpf.value) {
                                 // então aplica a máscara de cpf
                                 inputCpf.value =
                                     inputCpf.value
-                                        .match(/.{1,3}/g)
-                                        .join(".")
-                                        .replace(/\.(?=[^.]*$)/, "-");
+                                    .match(/.{1,3}/g)
+                                    .join(".")
+                                    .replace(/\.(?=[^.]*$)/, "-");
                             }
                         }
                     });
@@ -263,8 +264,8 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCep.value =
                                 inputCep.value
-                                    .replace(/[^\d]+/g, '')
-                                    .slice(0, 8);
+                                .replace(/[^\d]+/g, '')
+                                .slice(0, 8);
 
                             if (inputCep.value) {
                                 // então aplica a máscara de cpf
@@ -342,7 +343,7 @@ renderProducts = (items) => {
 function onCheckFilter(event) {
     let { id, checked } = event.srcElement,
         productsFiltered = [],
-        property = ['Console', 'Acessorio'].includes(id) ? 'type' : 'branch';
+        property = ['Console', 'Acessorio', 'Jogo'].includes(id) ? 'type' : 'branch';
 
     if (property === 'type') {
         filtersType = defineFilter(filtersType, checked, id);
@@ -404,3 +405,32 @@ inputSearch.addEventListener('change', () => {
         renderProducts(productsSerach);
     }
 });
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
