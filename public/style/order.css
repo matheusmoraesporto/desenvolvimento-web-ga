@@ -65,6 +65,13 @@ td .bkg-light-blue {
     width: 30%;
 }
 
+.forms-detail input,
+.forms-detail label,
+select,
+legend {
+    font-size: 14px;
+}
+
 .form-personal {
     margin-right: 1.5%;
 }
@@ -166,6 +173,9 @@ td .bkg-light-blue {
     background-color: #ffffff;
     color: #0077B6;
     border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 input:-webkit-autofill,

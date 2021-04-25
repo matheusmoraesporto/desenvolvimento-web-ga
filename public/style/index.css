@@ -71,6 +71,7 @@ button:focus {
     background-color: #0077B6;
     color: white;
     margin-top: 10px;
+    transition: all 1s;
 }
 
 .btn:hover {
@@ -136,6 +137,10 @@ button:focus {
     width: 20px;
 }
 
+.icon-25 {
+    width: 25px;
+}
+
 .font-bold {
     font-weight: bold;
 }
@@ -159,13 +164,29 @@ button:focus {
     justify-content: center;
 }
 
+@keyframes render-message {
+    from {
+        width: 0;
+        font-size: 0;
+    }
+    to {
+        width: 300px;
+        font-size: 18px;
+    }
+}
+
 .messages {
     position: fixed;
     right: 10px;
     top: 10px;
-    /* background-color: red; */
     color: #ffffff;
     z-index: 99;
     padding: 20px;
     border-radius: 5px;
+}
+
+.messages p {
+    margin-right: 10px;
+    animation-name: render-message;
+    animation-duration: 1s;
 }
