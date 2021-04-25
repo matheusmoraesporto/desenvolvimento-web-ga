@@ -45,3 +45,9 @@
     width: 16px;
     margin-left: 5px;
 }
+
+#input-boleto {
+    border-radius: 5px;
+    padding: 10px;
+    border: solid;
+}

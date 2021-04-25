@@ -1,5 +1,11 @@
 class ViewOrderFinish {
     static getOrderFinish(cart) {
+        let fakeBoleto = '';
+
+        for (let index = 0; index < 48; index++) {
+            fakeBoleto += Math.floor(Math.random() * 10);
+        }
+
         return `
             <div class="card-conclusion">
                 <div class="product-resume">
@@ -7,6 +13,11 @@ class ViewOrderFinish {
                         <h3>Resumo do pedido</h3>
                         <p>Número do pedido: <span>${parseInt(Math.random() * 100000)}</span></p>
                         <p>Valor do pedido:<span>R$ ${Utils.updateTotalValue(cart)}</span></p>
+                        
+                        <div>
+                            <input id="input-boleto" type="text" readonly value="${fakeBoleto}">
+                            <button id="btn-copy" class="btn">Copiar o código de barras do boleto<button>
+                        </div>
                     </div>
                     <div class="conclusion">
                         <h3>Pedido conlcluído com sucesso!</h3>

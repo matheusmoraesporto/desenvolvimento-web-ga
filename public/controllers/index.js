@@ -343,9 +343,18 @@ renderProducts = (items) => {
 
                                 Utils.pushComponent(divMain, contentFinish);
 
-                                let btnBack = document.getElementById('back');
+                                let btnBack = document.getElementById('back'),
+                                    btnCopy = document.getElementById('btn-copy');
 
                                 btnBack.addEventListener('click', goMainView);
+                                
+                                btnCopy.addEventListener('click', () => {
+                                    let inputBoleto = document.getElementById('input-boleto');
+
+                                    inputBoleto.select();
+
+                                    document.execCommand('copy');
+                                })
                             })
                             .catch(responseError => {
                                 alert(responseError);
