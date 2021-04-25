@@ -51,7 +51,7 @@ function goMainView() {
     loadProducts();
 }
 
-function addMessage(msg, backgroundColor) {
+function addMessage(msg, backgroundColor, time) {
     let msgComponent = document.getElementsByClassName('messages')[0];
 
     msgComponent.hidden = false;
@@ -62,7 +62,7 @@ function addMessage(msg, backgroundColor) {
 
     setTimeout(() => {
         msgComponent.hidden = true;
-    }, 5000);
+    }, time);
 }
 
 function maskPhone(value) {
@@ -145,7 +145,7 @@ function onDeleteItem(event, complementId) {
 
     let removedItem = products.filter(o => o.id == id)[0];
 
-    addMessage(`O item ${removedItem.description} foi removido do carrinho.`, 'orange');
+    addMessage(`O item ${removedItem.description} foi removido do carrinho.`, 'orange', 3000);
 }
 
 addItensCart = () => {
@@ -332,7 +332,7 @@ renderProducts = (items) => {
                             })
                             .then(response => {
                                 if (response.possuiErros) {
-                                    addMessage(response.msg, 'red');
+                                    addMessage(response.msg, 'red', 5000);
                                     return;
                                 }
 
@@ -348,7 +348,7 @@ renderProducts = (items) => {
                                     btnCopy = document.getElementById('btn-copy');
 
                                 btnBack.addEventListener('click', goMainView);
-                                
+
                                 btnCopy.addEventListener('click', () => {
                                     let inputBoleto = document.getElementById('input-boleto');
 
@@ -364,7 +364,7 @@ renderProducts = (items) => {
                 });
             }
 
-            addMessage(`O item ${newProduct.description} foi adicionado ao carrinho.`, 'green');
+            addMessage(`O item ${newProduct.description} foi adicionado ao carrinho.`, 'green', 3000);
         });
     });
 };
