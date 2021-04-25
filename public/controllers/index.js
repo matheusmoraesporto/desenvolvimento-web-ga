@@ -138,7 +138,10 @@ function onDeleteItem(event, complementId) {
 
     cart = cart.filter(o => o.id != id);
 
-    tbody.removeChild(tr);
+    tr.classList.add('deleted-tr');
+    setTimeout(() => {
+        tbody.removeChild(tr);
+    }, 800);
 
     asideProductsCartDetails.innerHTML = ViewOrder.getResumeOrder(cart);
 
@@ -189,7 +192,7 @@ renderProducts = (items) => {
 
     let gotop = document.getElementById("gotop");
 
-    window.onscroll = function () { scrollFunction() };
+    window.onscroll = function() { scrollFunction() };
 
     function scrollFunction() {
         if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
@@ -274,16 +277,16 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCpf.value =
                                 inputCpf.value
-                                    .replace(/[^\d]+/g, '')
-                                    .slice(0, 11);
+                                .replace(/[^\d]+/g, '')
+                                .slice(0, 11);
 
                             if (inputCpf.value) {
                                 // então aplica a máscara de cpf
                                 inputCpf.value =
                                     inputCpf.value
-                                        .match(/.{1,3}/g)
-                                        .join(".")
-                                        .replace(/\.(?=[^.]*$)/, "-");
+                                    .match(/.{1,3}/g)
+                                    .join(".")
+                                    .replace(/\.(?=[^.]*$)/, "-");
                             }
                         }
                     });
@@ -293,8 +296,8 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCep.value =
                                 inputCep.value
-                                    .replace(/[^\d]+/g, '')
-                                    .slice(0, 8);
+                                .replace(/[^\d]+/g, '')
+                                .slice(0, 8);
 
                             if (inputCep.value) {
                                 // então aplica a máscara de cpf
