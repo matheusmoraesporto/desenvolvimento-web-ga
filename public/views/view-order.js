@@ -30,7 +30,7 @@ class ViewOrder {
     static getOrder(items) {
         let total = 0.0,
             content = `
-        <div class="content-table filter-drop-shadow">
+        <div class="content-table">
             <table>
                 <thead class="head-order">
                     <tr>
@@ -82,7 +82,7 @@ class ViewOrder {
                 </div>
 
                 <div class="flex-row forms">
-                    <div class="forms-detail form-personal">
+                    <div class="forms-detail form-personal filter-drop-shadow">
                         <div class="flex-row forms-detail-head">
                             <img src="../assets/Icons/personal.png" class="icon-20">
                             <h4>Informações cadastrais</h4>
@@ -123,7 +123,7 @@ class ViewOrder {
                         </div>
                     </div>
 
-                    <div class="forms-detail form-address">
+                    <div class="forms-detail form-address filter-drop-shadow">
                         <div class="flex-row forms-detail-head">
                             <img src="../assets/Icons/location.png" class="icon-20">
                             <h4>Entrega</h4>
@@ -199,7 +199,7 @@ class ViewOrder {
                             </div>
                         </div>
                     </div>
-                    <div class="forms-detail form-payment">
+                    <div class="forms-detail form-payment filter-drop-shadow">
                         <div class="flex-row forms-detail-head">
                             <img src="../assets/Icons/cash.png" class="icon-20">
                             <h4>Pagamento</h4>
@@ -232,7 +232,10 @@ class ViewOrder {
 
     static getComponentEmptyCart() {
         return `
-            <span class="spn-empty-cart">O carrinho está vazio! Volte a tela inicial e adicione um produto.</span>
-            <button type="submit" id="continue-buying" class="cursor-pointer btn">Continuar comprando</button>`;
+            <div class="empty-cart-none">
+               <span class="spn-empty-cart">O carrinho está vazio! Volte a tela inicial e adicione um produto.</span>
+               <img src="../assets/Icons/cart_empty.jpg">
+               <button type="submit" id="continue-buying" class="cursor-pointer btn">Continuar comprando</button>
+            </div>`;
     }
 }
