@@ -9,6 +9,19 @@ body {
     position: relative;
 }
 
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: linear-gradient( 180deg, rgba(1, 46, 89, 1) 11%, rgba(0, 119, 182, 1) 44%, rgba(72, 202, 228, 1) 68%, rgba(255, 255, 255, 1) 100%);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #06bade;
+    border-radius: 15px;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -189,4 +202,10 @@ button:focus {
     margin-right: 10px;
     animation-name: render-message;
     animation-duration: 1s;
+}
+
+.spn-empty-cart {
+    color: #4498bb;
+    font-size: 20px;
+    margin-top: 35px;
 }

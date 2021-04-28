@@ -13,6 +13,7 @@ table {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-spacing: 0;
+    filter: drop-shadow(0 0 3px #BCBCBC);
 }
 
 @keyframes removed-item-animation {
@@ -77,6 +78,7 @@ td .bkg-light-blue {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border: none;
+    filter: drop-shadow(0 0 3px #BCBCBC);
 }
 
 .total span {
@@ -214,4 +216,19 @@ input:-webkit-autofill,
 select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #EAF5F8 inset;
     -webkit-text-fill-color: #262626 !important;
+}
+
+.empty-cart-none {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-cart-none img {
+    height: 324px;
+    margin: 0 0 -43px;
+}
+
+.empty-cart-none img:hover {
+    animation: infinite;
 }
