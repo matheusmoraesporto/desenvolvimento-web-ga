@@ -118,7 +118,7 @@ function onChangeQuantity(event, isIncrement) {
 
     cart.forEach(o => {
         if (o.id == id) {
-            let valueR$ = (o.quantity * o.value).toFixed(2);
+            let valueR$ = (newQuantity * o.value).toFixed(2);
 
             o.quantity = newQuantity;
 

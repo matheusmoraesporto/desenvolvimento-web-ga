@@ -19,7 +19,7 @@ class ViewOrderFinish {
                             <button id="btn-copy" class="btn cursor-pointer">
                                 Copiar o código de barras do boleto
                                 <img src="../assets/Icons/copy.png" alt="Copiar" class="icon-20">
-                            <button>
+                            </button>
                         </div>
                     </div>
                     <div class="conclusion">
