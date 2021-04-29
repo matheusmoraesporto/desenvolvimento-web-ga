@@ -4,11 +4,11 @@ let inputSearch = document.getElementById('search'),
     asideProductsCartDetails = document.getElementById('products-in-cart-detail'),
     btnCart = document.getElementById('btn-cart'),
     pEmptyCart = document.getElementById('empty-cart'),
-    filtersTypeProduct = Array.prototype.slice.call(document.getElementsByClassName('filters-type-product')),
+    filtersTypeProduct = Array.from(document.getElementsByClassName('filters-type-product')),
     divMain = document.getElementsByClassName('main')[0],
     divSlide = document.getElementsByClassName('slideshow-container')[0],
     logo = document.getElementsByClassName('logo')[0],
-    event = new Event('changecart'),
+    slideIndex = 1,
     products = [],
     cart = [],
     filtersType = [],
@@ -17,6 +17,45 @@ let inputSearch = document.getElementById('search'),
         personal: {},
         address: {}
     };
+
+showSlides(slideIndex);
+
+// Próximo e anterior
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Controle de imagens
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let slides = Array.from(document.getElementsByClassName("slides")),
+        dots = Array.from(document.getElementsByClassName("dot"));
+
+    // se estiver no último slide e tentar avançar para a direita, então volta para o primeiro
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+
+    // se estiver no primeiro slide e tentar ir para a esquerda, então vai para o último slide
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+    // reseta os slides, removendo-os
+    slides.forEach(o => o.style.display = 'none');
+
+    // inativa todos os assistentes
+    dots.forEach(o => o.className = o.className.replace(" active", ""));
+
+    // exibe o próximo slide
+    slides[slideIndex - 1].style.display = "block";
+
+    // marca o assistente do índice do slide
+    dots[slideIndex - 1].className += " active";
+}
 
 // Definição das funções
 loadProducts = () => {
@@ -42,7 +81,7 @@ function goMainView() {
     asideProductsCart.hidden = true;
 
     // necessário, pois quando recriava a tela não estava adicionando o evento de click dos filtros
-    let newfiltersTypeProduct = Array.prototype.slice.call(document.getElementsByClassName('filters-type-product'));
+    let newfiltersTypeProduct = Array.from(document.getElementsByClassName('filters-type-product'));
 
     newfiltersTypeProduct.forEach(o => {
         o.addEventListener('click', onCheckFilter);
@@ -72,7 +111,9 @@ function addMessage(msg, backgroundColor, time) {
 }
 
 function killMessage(msgComponent) {
-    Array.prototype.slice.call(msgComponent.children).forEach(o => o.hidden = true);
+    Array.from(msgComponent.children)
+        .forEach(o => o.hidden = true);
+
     msgComponent.style.backgroundColor = null;
 }
 
@@ -80,7 +121,6 @@ function maskPhone(value) {
     let r = value.replace(/\D/g, "");
 
     r = r.replace(/^0/, "");
-
 
     if (r.length > 11) {
         r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
@@ -143,6 +183,7 @@ function onDeleteItem(event, complementId) {
         tbody.removeChild(tr);
     }, 800);
 
+    // Atualizando resumo do pedido
     asideProductsCartDetails.innerHTML = ViewOrder.getResumeOrder(cart);
 
     addItensCart();
@@ -192,7 +233,7 @@ renderProducts = (items) => {
 
     let gotop = document.getElementById("gotop");
 
-    window.onscroll = function() { scrollFunction() };
+    window.onscroll = function () { scrollFunction() };
 
     function scrollFunction() {
         if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
@@ -208,7 +249,7 @@ renderProducts = (items) => {
     });
 
 
-    let allBtnAddProduct = Array.prototype.slice.call(document.getElementsByClassName('add-product'));
+    let allBtnAddProduct = Array.from(document.getElementsByClassName('add-product'));
 
     // Adiciona para todos eles o evento que irá adicionar o produto no carrinho
     allBtnAddProduct.forEach((btn) => {
@@ -248,14 +289,14 @@ renderProducts = (items) => {
                     asideProductsCart.hidden = true;
 
                     let btnFinish = document.getElementById('finish'),
-                        allBtnDelete = Array.prototype.slice.call(document.getElementsByClassName('delete')),
-                        allBtnIncrement = Array.prototype.slice.call(document.getElementsByClassName('btn-increment')),
-                        allBtnDecrement = Array.prototype.slice.call(document.getElementsByClassName('btn-decrement')),
+                        allBtnDelete = Array.from(document.getElementsByClassName('delete')),
+                        allBtnIncrement = Array.from(document.getElementsByClassName('btn-increment')),
+                        allBtnDecrement = Array.from(document.getElementsByClassName('btn-decrement')),
                         inputCpf = document.getElementById('cpf'),
                         inputCep = document.getElementById('cep'),
                         inputCell = document.getElementById('cell'),
                         inputTelephone = document.getElementById('telephone'),
-                        fields = Array.prototype.slice.call(document.getElementsByClassName('input-form'));
+                        fields = Array.from(document.getElementsByClassName('input-form'));
 
                     fields.forEach(o => {
                         o.addEventListener('change', () => {
@@ -277,16 +318,16 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCpf.value =
                                 inputCpf.value
-                                .replace(/[^\d]+/g, '')
-                                .slice(0, 11);
+                                    .replace(/[^\d]+/g, '')
+                                    .slice(0, 11);
 
                             if (inputCpf.value) {
                                 // então aplica a máscara de cpf
                                 inputCpf.value =
                                     inputCpf.value
-                                    .match(/.{1,3}/g)
-                                    .join(".")
-                                    .replace(/\.(?=[^.]*$)/, "-");
+                                        .match(/.{1,3}/g)
+                                        .join(".")
+                                        .replace(/\.(?=[^.]*$)/, "-");
                             }
                         }
                     });
@@ -296,8 +337,8 @@ renderProducts = (items) => {
                             // Obtém somente os números, para obter a quantidade máxima que pode ser informada
                             inputCep.value =
                                 inputCep.value
-                                .replace(/[^\d]+/g, '')
-                                .slice(0, 8);
+                                    .replace(/[^\d]+/g, '')
+                                    .slice(0, 8);
 
                             if (inputCep.value) {
                                 // então aplica a máscara de cpf
@@ -448,32 +489,3 @@ inputSearch.addEventListener('change', () => {
         renderProducts(productsSerach);
     }
 });
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}

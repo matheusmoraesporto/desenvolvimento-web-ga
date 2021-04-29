@@ -76,17 +76,17 @@ class ViewProducts {
 
     static getSlider() {
         return `      <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
+        <div class="slides fade">
             <div class="numbertext">1 / 3</div>
             <img src="./assets/slideImages/slide2.jpg" style="width:100%">
         </div>
 
-        <div class="mySlides fade">
+        <div class="slides fade">
             <div class="numbertext">2 / 3</div>
             <img src="./assets/slideImages/slide1.jpg" style="width:100%">
         </div>
 
-        <div class="mySlides fade">
+        <div class="slides fade">
             <div class="numbertext">3 / 3</div>
             <img src="./assets/slideImages/slide3.jpg" style="width:100%">
         </div>
