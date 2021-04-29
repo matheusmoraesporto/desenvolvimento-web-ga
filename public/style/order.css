@@ -228,7 +228,3 @@ select:-webkit-autofill {
     height: 324px;
     margin: 0 0 -43px;
 }
-
-.empty-cart-none img:hover {
-    animation: infinite;
-}

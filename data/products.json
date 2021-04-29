@@ -1,4 +1,5 @@
-[{
+[
+    {
         "id": 1,
         "description": "Controle Dreamcast",
         "img": "../assets/objectImages/Controle_Dreamcast_Sega.png",
@@ -468,7 +469,7 @@
     },
     {
         "id": 53,
-        "description": "Naruto Stomp",
+        "description": "Naruto Storm",
         "img": "../assets/jogos/xboxb360_naruto.jpg",
         "value": 67.99,
         "branch": "Xbox",
@@ -531,7 +532,7 @@
     },
     {
         "id": 60,
-        "description": "Call of Duty B.O",
+        "description": "Call of Duty Black Ops II",
         "img": "../assets/jogos/xbox360_cod_bops.jpg",
         "value": 67.99,
         "branch": "Xbox",
@@ -549,7 +550,7 @@
     },
     {
         "id": 62,
-        "description": "StarWars Battlefront",
+        "description": "Star Wars Battlefront",
         "img": "../assets/jogos/xbox_star wars battlefront.jpg",
         "value": 67.99,
         "branch": "Xbox",
@@ -612,7 +613,7 @@
     },
     {
         "id": 69,
-        "description": "Starfoz Zero",
+        "description": "Starfox Zero",
         "img": "../assets/jogos/wiiu_starfox.jpg",
         "value": 67.99,
         "branch": "Nintendo",
@@ -639,7 +640,7 @@
     },
     {
         "id": 72,
-        "description": "Mario 3DWorld",
+        "description": "Super Mario 3D World",
         "img": "../assets/jogos/wiiu_mario3dworld.jpg",
         "value": 67.99,
         "branch": "Nintendo",
@@ -675,7 +676,7 @@
     },
     {
         "id": 76,
-        "description": "StarWars C.Saga",
+        "description": "Star Wars Complete Saga",
         "img": "../assets/jogos/wii_legosw.jpg",
         "value": 67.99,
         "branch": "Nintendo",
@@ -684,7 +685,7 @@
     },
     {
         "id": 77,
-        "description": "StarWars Lord of Rings",
+        "description": "Star Wars Lord of Rings",
         "img": "../assets/jogos/wii_lego_lord.jpg",
         "value": 67.99,
         "branch": "Nintendo",
@@ -864,7 +865,7 @@
     },
     {
         "id": 97,
-        "description": "Spiderman M.M",
+        "description": "Spiderman Miles Morales",
         "img": "../assets/jogos/ps5_spiderman.jpg",
         "value": 67.99,
         "branch": "Playstation",
@@ -918,7 +919,7 @@
     },
     {
         "id": 103,
-        "description": "The Last of Us",
+        "description": "The Last of Us Part II",
         "img": "../assets/jogos/ps4_tlus.jpg",
         "value": 67.99,
         "branch": "Playstation",
@@ -999,7 +1000,7 @@
     },
     {
         "id": 112,
-        "description": "Call of Duty",
+        "description": "Call of Duty Black Ops II",
         "img": "../assets/jogos/ps3_cod.jpg",
         "value": 67.99,
         "branch": "Playstation",
@@ -1404,7 +1405,7 @@
     },
     {
         "id": 157,
-        "description": "Super Mario",
+        "description": "Super Mario 3D Land",
         "img": "../assets/jogos/3ds_supermario.jpg",
         "value": 67.99,
         "branch": "Nintendo",

@@ -8,7 +8,7 @@ let inputSearch = document.getElementById('search'),
     divMain = document.getElementsByClassName('main')[0],
     divSlide = document.getElementsByClassName('slideshow-container')[0],
     logo = document.getElementsByClassName('logo')[0],
-    event = new Event('changecart'),
+    slideIndex = 1,
     products = [],
     cart = [],
     filtersType = [],
@@ -17,6 +17,45 @@ let inputSearch = document.getElementById('search'),
         personal: {},
         address: {}
     };
+
+showSlides(slideIndex);
+
+// Próximo e anterior
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Controle de imagens
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let slides = Array.from(document.getElementsByClassName("slides")),
+        dots = Array.from(document.getElementsByClassName("dot"));
+
+    // se estiver no último slide e tentar avançar para a direita, então volta para o primeiro
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+
+    // se estiver no primeiro slide e tentar ir para a esquerda, então vai para o último slide
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+    // reseta os slides, removendo-os
+    slides.forEach(o => o.style.display = 'none');
+
+    // inativa todos os assistentes
+    dots.forEach(o => o.className = o.className.replace(" active", ""));
+
+    // exibe o próximo slide
+    slides[slideIndex - 1].style.display = "block";
+
+    // marca o assistente do índice do slide
+    dots[slideIndex - 1].className += " active";
+}
 
 // Definição das funções
 loadProducts = () => {
@@ -119,7 +158,7 @@ function onChangeQuantity(event, isIncrement) {
 
     cart.forEach(o => {
         if (o.id == id) {
-            let valueR$ = (o.quantity * o.value).toFixed(2);
+            let valueR$ = (newQuantity * o.value).toFixed(2);
 
             o.quantity = newQuantity;
 
@@ -144,6 +183,7 @@ function onDeleteItem(event, complementId) {
         tbody.removeChild(tr);
     }, 800);
 
+    // Atualizando resumo do pedido
     asideProductsCartDetails.innerHTML = ViewOrder.getResumeOrder(cart);
 
     addItensCart();
@@ -449,43 +489,3 @@ inputSearch.addEventListener('change', () => {
         renderProducts(productsSerach);
     }
 });
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    let slides = Array.from(document.getElementsByClassName("slides")),
-        dots = Array.from(document.getElementsByClassName("dot"));
-
-    // se estiver no último slide e tentar avançar para a direita, então volta para o primeiro
-    if (n > slides.length) {
-        slideIndex = 1
-    }
-
-    // se estiver no primeiro slide e tentar ir para a esquerda, então vai para o último slide
-    if (n < 1) {
-        slideIndex = slides.length
-    }
-
-    // reseta os slides, removendo-os
-    slides.forEach(o => o.style.display = 'none');
-
-    // inativa todos os assistentes
-    dots.forEach(o => o.className = o.className.replace(" active", ""));
-
-    // exibe o próximo slide
-    slides[slideIndex - 1].style.display = "block";
-
-    // marca o assistente do índice do slide
-    dots[slideIndex - 1].className += " active";
-}
