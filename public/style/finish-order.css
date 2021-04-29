@@ -1,11 +1,11 @@
 .card-conclusion {
-    margin: 85px 0 80px 0;
+    margin: 65px 0 65px 0;
     line-height: 35px;
     display: flex;
     border-radius: 5px;
     flex-direction: column;
-    background: linear-gradient(0deg, rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%);
-    padding: 50px 25px 50px 25px;
+    background: linear-gradient( 0deg, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    padding: 30px 25px 30px 25px;
     filter: drop-shadow(0 0 4px #C9C9C9);
 }
 
@@ -21,9 +21,13 @@
     flex-direction: column;
 }
 
+.conclusion h3 {
+    width: 280px;
+}
+
 .conclusion img {
     width: 45px;
-    margin: 10px 0 0 110px;
+    margin: 20px 0 0 110px;
 }
 
 .payment {
@@ -34,7 +38,7 @@
 }
 
 .payment button {
-    width: 180px;
+    width: 275px;
 }
 
 .payment p {
